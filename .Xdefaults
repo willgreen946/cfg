@@ -15,29 +15,22 @@ XTerm*cursorBlink: true
 UXTerm*cursorBlink: true
 
 ! Fonts
-!XTerm*faceName: More Perfect DOS VGA
-!UXTerm*faceName: More Perfect DOS VGA
-XTerm*faceSize: 12 
-UXTerm*faceSize: 12
 XTerm*allowBoldFonts: true 
-UXTerm*allowBoldFonts: false
+UXTerm*allowBoldFonts: true 
 
 ! Turning off scrollbar
-XTerm*scrollBar:  on
-UXTerm*scrollBar: on
-
+XTerm*scrollBar: off
+UXTerm*scrollBar: off
 
 !Starting up with a geometry
-XTerm*VT100*geometry: 88x24
+XTerm*VT100*geometry: 80x24
+UXTerm*VT100*geometry: 80x24
 XTerm*VT100.initialFont: 5
 UXTerm*VT100.initialFont: 5
 
 ! Dark Mode
 XTerm*background: #000000
 XTerm*foreground: #AAAAAA
-! Light mode
-!XTerm*foreground: #000000
-!XTerm*background: #FFFFFF
 UXTerm*background: #000000
 UXTerm*foreground: #AAAAAA
 
