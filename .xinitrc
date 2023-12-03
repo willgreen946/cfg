@@ -24,20 +24,22 @@ xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
 # Set background color #
 ########################
 
-xsetroot -solid 'rgb:00/22/44'
+#xsetroot -solid 'rgb:00/22/44'
+xsetroot -solid 'rgb:00/00/00'
 
 ####################
 # Startup programs #
 ####################
 
-xterm -geometry 80x24+530+5 &
-xterm -geometry 80x24+530+400 &
-xterm -geometry 80x40+0+0 &
+#xterm -geometry 80x24+530+5 &
+#xterm -geometry 80x24+530+400 &
+#xterm -geometry 80x40+0+0 &
+xterm -e tmux &
 
 ###################
 # Window Managers #
 ###################
 
-#dwm
+dwm
 #fvwm
-ctwm
+#ctwm
