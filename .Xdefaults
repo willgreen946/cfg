@@ -22,17 +22,25 @@ UXTerm*allowBoldFonts: true
 XTerm*scrollBar: off
 UXTerm*scrollBar: off
 
+! Fix backspace issue with Tmux
+XTerm*VT100.backarrowKey: false
+UXTerm*VT100.backarrowKey: false
+XTerm*ttyModes: erase ^?
+UXTerm*ttyModes: erase ^?
+
 !Starting up with a geometry
 XTerm*VT100*geometry: 80x24
 UXTerm*VT100*geometry: 80x24
-XTerm*VT100.initialFont: 5
-UXTerm*VT100.initialFont: 5
+XTerm*VT100.initialFont: 64 
+UXTerm*VT100.initialFont: 64
 
 ! Dark Mode
 XTerm*background: #000000
-XTerm*foreground: #AAAAAA
+!XTerm*foreground: #AAAAAA
+XTerm*foreground: #FF8100 
 UXTerm*background: #000000
-UXTerm*foreground: #AAAAAA
+UXTerm*foreground: #FF8100 
+!UXTerm*foreground: #AAAAAA
 
 ! Normal colors - Bright colors
 
