@@ -15,6 +15,8 @@ XTerm*cursorBlink: true
 UXTerm*cursorBlink: true
 
 ! Fonts
+XTerm*faceName: ubuntu mono
+XTerm*faceSize: 12
 XTerm*allowBoldFonts: true 
 UXTerm*allowBoldFonts: true 
 
@@ -31,24 +33,24 @@ UXTerm*ttyModes: erase ^?
 !Starting up with a geometry
 XTerm*VT100*geometry: 80x24
 UXTerm*VT100*geometry: 80x24
-XTerm*VT100.initialFont: 64 
-UXTerm*VT100.initialFont: 64
+!XTerm*VT100.initialFont: 64 
+!UXTerm*VT100.initialFont: 64
 
 ! Dark Mode
 XTerm*background: #000000
-!XTerm*foreground: #AAAAAA
-XTerm*foreground: #FF8100 
+XTerm*foreground: #AAAAAA
+!XTerm*foreground: #FF8100 
 UXTerm*background: #000000
-UXTerm*foreground: #FF8100 
-!UXTerm*foreground: #AAAAAA
+!UXTerm*foreground: #FF8100 
+UXTerm*foreground: #AAAAAA
 
 ! Normal colors - Bright colors
 
 ! Black
 XTerm*color0: #000000
-XTerm*color8: #f0f0f0
+XTerm*color8: #F0F0F0
 UXTerm*color0: #000000
-UXTerm*color8: #f0f0f0
+UXTerm*color8: #F0F0F0
 
 ! Red
 XTerm*color1: #AA0000
