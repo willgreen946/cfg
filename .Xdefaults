@@ -15,10 +15,12 @@ XTerm*cursorBlink: true
 UXTerm*cursorBlink: true
 
 ! Fonts
-XTerm*faceName: ubuntu mono
-XTerm*faceSize: 12
+XTerm*faceName: spleen:pixelsize=32:antialias=true
+UXTerm*faceName: spleen:pixelsize=32:antialias=true
 XTerm*allowBoldFonts: true 
 UXTerm*allowBoldFonts: true 
+!XTerm*font:-misc-spleen-medium-r-normal--32-240-72-72-c-120-iso10646-1
+!UXTerm*font:-misc-spleen-medium-r-normal--32-240-72-72-c-120-iso10646-1
 
 ! Turning off scrollbar
 XTerm*scrollBar: off
