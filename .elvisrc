@@ -1,0 +1,12 @@
+set number
+set tabstop=2
+color normal white
+color function green 
+color variable bold blue
+color keyword bold magenta 
+color number yellow
+color string cyan
+color other green
+color fixed white
+color comment italic white
+color lnum blue

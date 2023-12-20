@@ -34,8 +34,8 @@ xsetroot -solid 'rgb:00/00/00'
 #xterm -geometry 80x24+530+5 &
 #xterm -geometry 80x24+530+400 &
 #xterm -geometry 80x40+0+0 &
-#xterm -e "tmux -2" &
-xterm &
+xterm -e "tmux -2" &
+#xterm -e &
 
 ###################
 # Window Managers #

@@ -1,3 +1,9 @@
-alias cls=clear
-alias ls='ls -l1A'
+PS1="[will@X200.home]$ "
+alias vim="elvis"
+alias nvim="elvis"
+alias ls="ls -l1A"
 set -o vi
+export TERM=vt340
+#export TERM=vt320
+#export TERM=vt220
+#export TERM=vt100
