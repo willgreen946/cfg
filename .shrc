@@ -2,6 +2,12 @@ PS1="[will@X200.home]$ "
 alias vim="elvis"
 alias nvim="elvis"
 alias ls="ls -l1A"
+alias cp="cp -v"
+alias mv="mv -v"
+alias rm="rm -v"
+alias youtube="sh ~/scripts/ytfzf/ytfzf"
+alias cputemp="sysctl hw.sensors.cpu0.temp0"
+alias linuxqa="lynx https://linuxsheet.com"
 set -o vi
 export TERM=vt340
 #export TERM=vt320
