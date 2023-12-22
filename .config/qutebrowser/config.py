@@ -1,7 +1,7 @@
 config.load_autoconfig(False)
 
 # light mode is cringe
-#config.set("colors.webpage.darkmode.enabled", True)
+config.set("colors.webpage.darkmode.enabled", True)
 
 # Bar control
 config.set("tabs.show", "switching")
@@ -15,23 +15,25 @@ config.set("statusbar.show", "never")
 config.set("completion.web_history.max_items", 0)
 config.set("completion.cmd_history_max_items", 0)
 
+FONT = "10pt spleen"
+
 # terminus is the most elite font 
-c.fonts.completion.entry = "8pt xos4 Terminus"
-c.fonts.completion.category = "bold 8pt xos4 Terminus"
-c.fonts.debug_console = "8pt xos4 Terminus"
-c.fonts.downloads = "8pt xos4 Terminus"
-c.fonts.hints = "bold 8px xos4 Terminus"
-c.fonts.keyhint = "8pt xos4 Terminus"
-c.fonts.messages.error = "8pt xos4 Terminus"
-c.fonts.messages.info = "8pt xos4 Terminus"
-c.fonts.messages.warning = "8pt xos4 Terminus"
-c.fonts.prompts = "8pt xos4 Terminus"
-c.fonts.statusbar = "8pt xos4 Terminus"
-c.fonts.tabs.selected = "8pt xos4 Terminus"
-c.fonts.tabs.unselected = "8pt xos4 Terminus"
-c.fonts.web.family.fixed = "xos4 Terminus"
-c.fonts.web.family.sans_serif = "xos4 Terminus"
-c.fonts.web.family.serif = "xos4 Terminus"
+c.fonts.completion.entry = FONT 
+c.fonts.completion.category = FONT 
+c.fonts.debug_console = FONT 
+c.fonts.downloads = FONT 
+c.fonts.hints = FONT 
+c.fonts.keyhint = FONT 
+c.fonts.messages.error = FONT 
+c.fonts.messages.info = FONT 
+c.fonts.messages.warning = FONT 
+c.fonts.prompts = FONT 
+c.fonts.statusbar = FONT 
+c.fonts.tabs.selected = FONT 
+c.fonts.tabs.unselected = FONT 
+#c.fonts.web.family.fixed = FONT 
+#c.fonts.web.family.sans_serif = FONT
+#c.fonts.web.family.serif = FONT
 
 # searx.be as default page 
 config.set("url.default_page", "https://searx.be")
@@ -41,38 +43,39 @@ config.set("completion.height", "25%")
 config.set("tabs.favicons.show", "never")
 
 # colors, really just generic grey
-config.set("colors.tabs.bar.bg", "#101010")
-config.set("colors.tabs.selected.even.bg", "#101010")
+config.set("colors.tabs.bar.bg", "#000000")
+config.set("colors.tabs.selected.even.bg", "#000000")
 config.set("colors.tabs.selected.even.fg", "#ffffff")
-config.set("colors.tabs.even.bg", "#101010")
+config.set("colors.tabs.even.bg", "#000000")
 config.set("colors.tabs.even.fg", "#b9b9b9")
-config.set("colors.tabs.selected.odd.fg", "#ffffff")
-config.set("colors.tabs.selected.odd.bg", "#101010")
+config.set("colors.tabs.selected.odd.fg", "#FFFFFF")
+config.set("colors.tabs.selected.odd.bg", "#000000")
 config.set("colors.tabs.odd.fg", "#b9b9b9")
-config.set("colors.tabs.odd.bg", "#101010")
-config.set("colors.hints.fg", "#b9b9b9")
-config.set("colors.hints.bg", "#101010")
-config.set("colors.statusbar.caret.fg", "#b9b9b9")
-config.set("colors.statusbar.caret.bg", "#101010")
-config.set("colors.statusbar.caret.selection.fg", "#b9b9b9")
-config.set("colors.statusbar.caret.selection.bg", "#101010")
-config.set("colors.statusbar.command.fg", "#b9b9b9")
-config.set("colors.statusbar.command.bg", "#101010")
-config.set("colors.statusbar.insert.fg", "#b9b9b9")
-config.set("colors.statusbar.insert.bg", "#101010")
-config.set("colors.prompts.bg", "#101010")
-config.set("colors.prompts.fg", "#b9b9b9")
-config.set("colors.contextmenu.menu.fg", "#b9b9b9")
-config.set("colors.contextmenu.menu.bg", "#101010")
-config.set("colors.completion.category.fg", "#b9b9b9")
-config.set("colors.completion.category.bg", "#101010")
-config.set("colors.completion.fg",	'#b9b9b9')
-config.set("colors.completion.even.bg", "#101010")
-config.set("colors.completion.item.selected.bg", "#b9b9b9")
-config.set("colors.completion.item.selected.fg", "#008f11")
+config.set("colors.tabs.odd.bg", "#000000")
+config.set("colors.hints.fg", "#FF8100")
+config.set("colors.hints.bg", "#000000")
+config.set("colors.statusbar.caret.fg", "#FF8100")
+config.set("colors.statusbar.caret.bg", "#000000")
+config.set("colors.statusbar.caret.selection.fg", "#FF8100")
+config.set("colors.statusbar.caret.selection.bg", "#000000")
+config.set("colors.statusbar.command.fg", "#FF8100")
+config.set("colors.statusbar.command.bg", "#000000")
+config.set("colors.statusbar.insert.fg", "#FF8100")
+config.set("colors.statusbar.insert.bg", "#000000")
+config.set("colors.prompts.bg", "#000000")
+config.set("colors.prompts.fg", "#FFFFFF")
+config.set("colors.completion.item.selected.match.fg", "#FF8100")
+config.set("colors.contextmenu.menu.fg", "#FF8100")
+config.set("colors.contextmenu.menu.bg", "#000000")
+config.set("colors.completion.category.fg", "#FF8100")
+config.set("colors.completion.category.bg", "#000000")
+config.set("colors.completion.fg",	'#FF8100')
+config.set("colors.completion.even.bg", "#000000")
+config.set("colors.completion.item.selected.bg", "#FF8100")
+config.set("colors.completion.item.selected.fg", "#FF8100")
 config.set("colors.completion.item.selected.border.top", "#b9b9b9")
-config.set("colors.completion.item.selected.border.bottom", "#b9b9b9")
-config.set("colors.completion.odd.bg", "#101010")
+config.set("colors.completion.item.selected.border.bottom", "#FF8100")
+config.set("colors.completion.odd.bg", "#000000")
 config.set("colors.completion.fg", "#b9b9b9")
 
 # opening different pages 
