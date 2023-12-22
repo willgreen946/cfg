@@ -1,8 +1,8 @@
 ! My .Xdefault/.Xresources file
 
 ! Use a login shell with every terminal
-XTerm*loginShell: true
-UXTerm*loginShell: true
+XTerm*loginShell: false 
+UXTerm*loginShell: false 
 
 ! Xsel
 XTerm*selectToClipboard: true
