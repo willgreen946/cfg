@@ -1,15 +1,15 @@
+set -o vi
 PS1="[will@X200.home]$ "
-alias vim="elvis"
-alias nvim="elvis"
-alias ls="ls -l1A"
+
+# Verbose commands
+alias ls="ls -A"
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
+
 alias youtube="sh ~/scripts/ytfzf/ytfzf"
 alias cputemp="sysctl hw.sensors.cpu0.temp0"
-alias linuxqa="lynx https://linuxsheet.com"
-set -o vi
+alias searchlinux="lynx https://linuxsheet.com"
+alias search="lynx https://duckduckgo.com"
+
 export TERM=vt340
-#export TERM=vt320
-#export TERM=vt220
-#export TERM=vt100

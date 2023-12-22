@@ -18,4 +18,6 @@ feh --bg-scale ~/pictures/unix.png
 
 xterm -e "tmux -2" &
 
+slstatus &
+
 dwm
