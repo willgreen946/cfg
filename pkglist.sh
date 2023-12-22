@@ -14,6 +14,11 @@ git \
 mpv \
 libreoffice \
 vitetris \
+gnustep-base \
+gnustep-back \
+lynx \
+fzf \
+jq \
 spleen"
 
 # Some packages that are shipped with OpenBSD but not others
@@ -26,3 +31,7 @@ ksh"
 # Remember to install dwm
 
 exec $PKG_MAN $PKG_LIST
+
+exec git clone https://github.com/willgreen946/cfg
+exec git clone https://github.com/willgreen946/dwm
+exec git clone https://github.com/willgreen946/slstatus
