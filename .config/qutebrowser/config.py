@@ -99,3 +99,16 @@ config.bind('H', 'back')
 config.set("fileselect.handler", "external")
 config.set("fileselect.single_file.command", ['xterm', '-e', 'vifm', '--choose-files', '{}'])
 config.set("fileselect.multiple_files.command", ['xterm', '-e', 'vifm', '--choose-files', '{}'])
+
+# Redirect all Reddit links to old.reddit.com
+import qutebrowser.api.interceptor
+
+def rewrite(request: qutebrowser.api.interceptor.Request):
+	if request.request_url.host() == 'www.reddit.com':
+		request.request_url.setHost('old.reddit.com')
+		try:
+			request.redirect(request.request_url)
+		except:
+			pass
+
+qutebrowser.api.interceptor.register(rewrite)
