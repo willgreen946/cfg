@@ -12,4 +12,6 @@ alias cputemp="sysctl hw.sensors.cpu0.temp0"
 alias searchlinux="lynx https://linuxsheet.com"
 alias search="lynx https://duckduckgo.com"
 
-export TERM=vt340
+# I am experimenting with different terminal emulations
+export TERM=linux-basic
+#export TERM=vt340
