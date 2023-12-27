@@ -13,5 +13,10 @@ alias searchlinux="lynx https://linuxsheet.com"
 alias search="lynx https://duckduckgo.com"
 
 # I am experimenting with different terminal emulations
-export TERM=linux-basic
+export TERM=xterm
+#export TERM=vt100
+#export TERM=vt220
 #export TERM=vt340
+#export TERM=linux
+#export TERM=linux-vt
+#export TERM=linux-basic

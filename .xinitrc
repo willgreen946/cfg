@@ -19,7 +19,7 @@ xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.3
 xsetroot -solid 'rgb:00/00/00'
 feh --bg-scale ~/pictures/unix.png
 
-xterm -e mtm &
+xterm -e "tmux -2" &
 
 slstatus &
 
