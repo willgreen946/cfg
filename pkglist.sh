@@ -1,37 +1,48 @@
-PKG_MAN="pkg_add"
-PKG_LIST="gcc \
-g++ \
+SYS=`uname`
+VOID_PKG_MAN="xbps-install -s "
+OPENBSD_PKG_MAN="pkg_add "
+
+UNIVERSAL_PKG_LIST="gcc \
 pcc \
 tcc \
 mono \
 mupdf \
-qutebrowser \
 vifm \
 bvi \
+lynx \
 nvi \
-elvis \
 git \
 mpv \
+htop \
 libreoffice \
-vitetris \
-gnustep-base \
-gnustep-back \
-lynx \
-fzf \
-jq \
-spleen"
+lynx"
 
-# Some packages that are shipped with OpenBSD but not others
-PKG_ALT_LIST="tmux \
-gdb \
-wpa_supplicant \
-ksh"
+VOID_PKG_LIST="base-devel \
+libX11-devel \
+libXft-devel \
+libXinerama-devel \
+fontconfig-devel \
+firefox \
+powertop \
+linux6.6-headers \
+xterm \
+xorg \
+tmux \
+$UNIVERSAL_PKG_LIST"
 
+OPENBSD_PKG_LIST="wpa_supplicant \
+g++ \
+obsdfreqd \
+$UNIVERSAL_PKG_LIST"
 
-# Remember to install dwm
+if [$SYS == "linux"]
+then
+	exec $VOID_PKG_MAN $VOID_PKG_LIST &
+elif [$SYS == "OpenBSD"]
+then
+	exec $OPENBSD_PKG_MAN $OPENBSD_PKG_LIST &
+fi
 
-exec $PKG_MAN $PKG_LIST
-
-exec git clone https://github.com/willgreen946/cfg
-exec git clone https://github.com/willgreen946/dwm
-exec git clone https://github.com/willgreen946/slstatus
+exec git clone https://github.com/willgreen946/cfg &
+exec git clone https://github.com/willgreen946/dwm &
+exec git clone https://github.com/willgreen946/slstatus &
