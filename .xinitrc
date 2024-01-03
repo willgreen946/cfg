@@ -16,13 +16,15 @@ xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
 # Thinkpad trackpoint speed
 xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.3
 
+# Disable trackpad
+synclient TouchpadOff=1
+
+# Wallpaper
 xsetroot -solid 'rgb:00/00/00'
 feh --bg-scale ~/pictures/nebula.jpg
 
+# User Programs
 #xterm -e "tmux -2" &
-
 slstatus &
-
 emacs &
-
 exec dwm
