@@ -21,8 +21,8 @@ URxvt*cursorBlink: True
 ! Fonts
 XTerm*faceName: spleen:pixelsize=24:antialias=true
 UXTerm*faceName: spleen:pixelsize=24:antialias=true
-XTerm*allowBoldFonts: true 
-UXTerm*allowBoldFonts: true 
+XTerm*allowBoldFonts: True 
+UXTerm*allowBoldFonts: True 
 !XTerm*font:-misc-spleen-medium-r-normal--32-240-72-72-c-120-iso10646-1
 !UXTerm*font:-misc-spleen-medium-r-normal--32-240-72-72-c-120-iso10646-1
 
@@ -37,6 +37,10 @@ UXTerm*VT100.backarrowKey: False
 XTerm*ttyModes: erase ^?
 UXTerm*ttyModes: erase ^?
 
+! Enable visual bell
+XTerm*visualBell: True
+UXTerm*visualBell: True
+
 !Starting up with a geometry
 XTerm*VT100*geometry: 80x24
 UXTerm*VT100*geometry: 80x24
@@ -47,6 +51,8 @@ URxvt*VT100*geometry: 80x24
 ! Dark Mode
 XTerm*background: #000000
 XTerm*foreground: #AAAAAA
+XTerm*foreground: #81B5AC
+XTerm*background: #031A16
 UXTerm*background: #000000
 UXTerm*foreground: #AAAAAA
 URxvt*background: #000000
