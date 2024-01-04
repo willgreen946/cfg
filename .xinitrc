@@ -24,7 +24,7 @@ xsetroot -solid 'rgb:00/00/00'
 feh --bg-scale ~/pictures/nebula.jpg
 
 # User Programs
-#xterm -e "tmux -2" &
 slstatus &
-xterm &
+#xterm -e "mtm" &
+xterm
 exec dwm

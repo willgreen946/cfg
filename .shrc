@@ -7,15 +7,23 @@ alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
 
-alias gettune="yt-dlp --extract-audio --audio-format wav $1"
-alias youtube="sh ~/scripts/ytfzf/ytfzf"
-alias cputemp="sysctl hw.sensors.cpu0.temp0"
-alias searchlinux="lynx https://linuxsheet.com"
-alias search="lynx https://duckduckgo.com"
+alias get_tune="yt-dlp --extract-audio --audio-format wav $1"
+alias search_youtube="sh ~/scripts/ytfzf/ytfzf"
+alias cpu_temp="sysctl hw.sensors.cpu0.temp0"
+alias search_linux="lynx https://linuxsheet.com"
+alias search_internet="lynx https://duckduckgo.com"
+alias vim="vis"
+
+# Linux, change interface name, usually its wlan0
+alias wifi_list="sudo iw wlp3s0 scan | grep SSID"
+
+# OpenBSD
+#alias wifi_list="iw wlp3s0 scan | grep SSID | less"
 
 # I am experimenting with different terminal emulations
-export TERM=screen
-#export TERM=xterm
+export TERM=xterm-256color
+#export TERM=screen
+#export TERM=screen-256color
 #export TERM=vt100
 #export TERM=ms-vt100-color
 #export TERM=vt220
