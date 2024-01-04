@@ -26,5 +26,5 @@ feh --bg-scale ~/pictures/nebula.jpg
 # User Programs
 #xterm -e "tmux -2" &
 slstatus &
-emacs &
+xterm &
 exec dwm
