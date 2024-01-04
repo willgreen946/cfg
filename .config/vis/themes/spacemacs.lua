@@ -1,26 +1,26 @@
 -- base16-vis (https://github.com/pshevtsov/base16-vis)
 -- by Petr Shevtsov
--- Apathy scheme by Jannik Siebert (https://github.com/janniks)
+-- Spacemacs scheme by Nasser Alshammari (https://github.com/nashamri/spacemacs-theme)
 
 local lexers = vis.lexers
 
 local colors = {
-	['base00'] = '#031A16',
-	['base01'] = '#0B342D',
-	['base02'] = '#184E45',
-	['base03'] = '#2B685E',
-	['base04'] = '#5F9C92',
-	['base05'] = '#81B5AC',
-	['base06'] = '#A7CEC8',
-	['base07'] = '#D2E7E4',
-	['base08'] = '#3E9688',
-	['base09'] = '#3E7996',
-	['base0A'] = '#3E4C96',
-	['base0B'] = '#883E96',
-	['base0C'] = '#963E4C',
-	['base0D'] = '#96883E',
-	['base0E'] = '#4C963E',
-	['base0F'] = '#3E965B',
+	['base00'] = '#1f2022',
+	['base01'] = '#282828',
+	['base02'] = '#444155',
+	['base03'] = '#585858',
+	['base04'] = '#b8b8b8',
+	['base05'] = '#a3a3a3',
+	['base06'] = '#e8e8e8',
+	['base07'] = '#f8f8f8',
+	['base08'] = '#f2241f',
+	['base09'] = '#ffa500',
+	['base0A'] = '#b1951d',
+	['base0B'] = '#67b11d',
+	['base0C'] = '#2d9574',
+	['base0D'] = '#4f97d7',
+	['base0E'] = '#a31db1',
+	['base0F'] = '#b03060',
 }
 
 lexers.colors = colors
@@ -61,3 +61,4 @@ lexers.STYLE_STATUS_FOCUSED = 'fore:'..colors.base09..',back:'..colors.base01
 lexers.STYLE_SEPARATOR = lexers.STYLE_DEFAULT
 lexers.STYLE_INFO = 'fore:default,back:default,bold'
 lexers.STYLE_EOF = ''
+
