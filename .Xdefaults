@@ -123,3 +123,5 @@ UXTerm*color7: #AAAAAA
 UXTerm*color15: #FFFFFF
 URxvt*color7: #AAAAAA
 URxvt*color15: #FFFFFF
+
+URxvt*depth: 32

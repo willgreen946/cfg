@@ -1,5 +1,6 @@
 set -o vi
-PS1="[`whoami`@`hostname`]$ "
+PS1="[32m[`whoami`@`hostname`]$[00m "
+#PS1="[`whoami`@`hostname`]$ "
 
 # Verbose commands
 alias ls="ls -A"
@@ -21,7 +22,8 @@ alias wifi_list="sudo iw wlp3s0 scan | grep SSID"
 #alias wifi_list="iw wlp3s0 scan | grep SSID | less"
 
 # I am experimenting with different terminal emulations
-export TERM=xterm-256color
+#export TERM=xterm-256color
+export TERM=st-256color
 #export TERM=screen
 #export TERM=screen-256color
 #export TERM=vt100
