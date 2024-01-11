@@ -97,8 +97,8 @@ config.bind('H', 'back')
 
 # vifm as file browser
 config.set("fileselect.handler", "external")
-config.set("fileselect.single_file.command", ['xterm', '-e', 'vifm', '--choose-files', '{}'])
-config.set("fileselect.multiple_files.command", ['xterm', '-e', 'vifm', '--choose-files', '{}'])
+config.set("fileselect.single_file.command", ['st', '-e', 'vifm', '--choose-files', '{}'])
+config.set("fileselect.multiple_files.command", ['st', '-e', 'vifm', '--choose-files', '{}'])
 
 # Redirect all Reddit links to old.reddit.com
 import qutebrowser.api.interceptor
