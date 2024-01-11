@@ -8,6 +8,12 @@ setxkbmap -layout gb
 # Font path for urxvt
 #xset +fp /usr/local/share/fonts/spleen
 
+# Set refresh rate (60Hz)
+xrandr -r 60
+
+# Lower brightness
+xbacklight -set 50
+
 # Thinkpad middle click scroll
 xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
 xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Button" 2
@@ -21,10 +27,9 @@ synclient TouchpadOff=1
 
 # Wallpaper
 xsetroot -solid 'rgb:00/00/00'
-feh --bg-scale ~/pictures/nebula.jpg
+#feh --bg-scale ~/Pictures/greenmountains.jpg
 
 # User Programs
-slstatus &
-#xterm -e "mtm" &
-xterm
+#slstatus &
+st -e tmux &
 exec dwm

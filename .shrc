@@ -1,22 +1,37 @@
+root_cmd="doas"
+wireless_interface="iwn0"
+
+export EDITOR="vise"
+export PAGER="less"
+
 set -o vi
-PS1="[32m[`whoami`@`hostname`]$[00m "
+set -o posix
+
+# Colored prompt
+#PS1="[32m[`whoami`@`hostname`]$[00m "
 #PS1="[`whoami`@`hostname`]$ "
+PS1="# "
 
 # Verbose commands
-alias ls="ls -A"
+alias ls="ls -lA"
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
+alias lsblk="sysctl hw.disknames"
 
-alias get_tune="yt-dlp --extract-audio --audio-format wav $1"
-alias search_youtube="sh ~/scripts/ytfzf/ytfzf"
-alias cpu_temp="sysctl hw.sensors.cpu0.temp0"
-alias search_linux="lynx https://linuxsheet.com"
-alias search_internet="lynx https://duckduckgo.com"
-alias vim="vis"
+alias net_get_tune="yt-dlp --extract-audio --audio-format wav $1"
+alias net_search_youtube="sh ~/scripts/ytfzf/ytfzf"
+alias net_search_linux="lynx https://linuxsheet.com"
+alias net_search="lynx https://duckduckgo.com"
+
+# Text editor
+alias vim="vise"
 
 # Linux, change interface name, usually its wlan0
-alias wifi_list="sudo iw wlp3s0 scan | grep SSID"
+#alias net_list="$root_cmd iw $wireless_interface scan | grep SSID"
+
+# OpenBSD
+alias net_list="$root_cmd ifconfig $wireless_interface scan | grep nwid | awk '{print \$2}'"
 
 # OpenBSD
 #alias wifi_list="iw wlp3s0 scan | grep SSID | less"
