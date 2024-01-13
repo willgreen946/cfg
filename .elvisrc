@@ -1,17 +1,17 @@
-set number
 set flash
+set number
 set tabstop=2
-color prep red
-color normal white
-color function white 
-color variable white 
-color keyword bold red
-color number yellow  
-color other bold red 
+color prep magenta 
+color keyword red 
 color fixed white
 color lnum yellow 
-color string yellow 
+color string blue 
+color normal yellow 
+color function white 
+color number magenta 
+color variable magenta 
+color other bold red 
+color comment green 
 color char like string
-color showmode boxed yellow
-color ruler boxed yellow
-color comment magenta
+color ruler yellow
+color showmode yellow

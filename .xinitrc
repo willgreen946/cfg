@@ -28,8 +28,10 @@ synclient TouchpadOff=1
 # Wallpaper
 xsetroot -solid 'rgb:00/00/00'
 #feh --bg-scale ~/Pictures/greenmountains.jpg
+feh --bg-scale ~/Pictures/ibm.jpg
 
 # User Programs
-#slstatus &
-st -e tmux &
-exec dwm
+slstatus &
+#st -e tmux &
+st &
+dwm

@@ -1,51 +1,34 @@
 root_cmd="doas"
 wireless_interface="iwn0"
 
-export EDITOR="vise"
+export EDITOR="vi"
 export PAGER="less"
 
 set -o vi
 set -o posix
 
-# Colored prompt
-#PS1="[32m[`whoami`@`hostname`]$[00m "
-#PS1="[`whoami`@`hostname`]$ "
 PS1="# "
+
+# Swap Escape and Caps_Lock on the TTY
+#wsconsctl keyboard.map+="keysym Caps_Lock = Escape"
 
 # Verbose commands
 alias ls="ls -lA"
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
-alias lsblk="sysctl hw.disknames"
 
+alias net_home="$root_cmd dhclient $wireless_interface && $root_cmd ifconfig $wireless_interface nwid \"BT-J5A85S\" wpakey \"c7G7dbLQK7APhE\""
 alias net_get_tune="yt-dlp --extract-audio --audio-format wav $1"
 alias net_search_youtube="sh ~/scripts/ytfzf/ytfzf"
 alias net_search_linux="lynx https://linuxsheet.com"
 alias net_search="lynx https://duckduckgo.com"
 
 # Text editor
-alias vim="vise"
+alias vim="elvis"
 
-# Linux, change interface name, usually its wlan0
+# Linux
 #alias net_list="$root_cmd iw $wireless_interface scan | grep SSID"
 
 # OpenBSD
 alias net_list="$root_cmd ifconfig $wireless_interface scan | grep nwid | awk '{print \$2}'"
-
-# OpenBSD
-#alias wifi_list="iw wlp3s0 scan | grep SSID | less"
-
-# I am experimenting with different terminal emulations
-#export TERM=xterm-256color
-export TERM=st-256color
-#export TERM=screen
-#export TERM=screen-256color
-#export TERM=vt100
-#export TERM=ms-vt100-color
-#export TERM=vt220
-#export TERM=crt-vt220
-#export TERM=vt340
-#export TERM=linux
-#export TERM=linux-vt
-#export TERM=linux-basic
