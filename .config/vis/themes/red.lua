@@ -1,0 +1,37 @@
+-- Eight-color scheme
+local lexers = vis.lexers
+-- dark
+lexers.STYLE_DEFAULT ='back:black,fore:white'
+lexers.STYLE_NOTHING = 'back:black'
+lexers.STYLE_CLASS = 'fore:yellow'
+lexers.STYLE_COMMENT = 'fore:green'
+lexers.STYLE_CONSTANT = 'fore:red,bright'
+lexers.STYLE_DEFINITION = 'fore:blue,bold'
+lexers.STYLE_ERROR = 'fore:red,italics'
+lexers.STYLE_FUNCTION = 'fore:blue,bold'
+lexers.STYLE_KEYWORD = 'fore:yellow'
+lexers.STYLE_LABEL = 'fore:green,bold'
+lexers.STYLE_NUMBER = 'fore:blue'
+lexers.STYLE_OPERATOR = 'fore:yellow'
+lexers.STYLE_REGEX = 'fore:green,bold'
+lexers.STYLE_STRING = 'fore:magenta'
+lexers.STYLE_PREPROCESSOR = 'fore:blue'
+lexers.STYLE_TAG = 'fore:red,bold'
+lexers.STYLE_TYPE = 'fore:red'
+lexers.STYLE_VARIABLE = 'fore:blue'
+lexers.STYLE_WHITESPACE = ''
+lexers.STYLE_EMBEDDED = 'back:blue,bold'
+lexers.STYLE_IDENTIFIER = 'fore:white'
+
+lexers.STYLE_LINENUMBER = 'back:black,fore:red'
+lexers.STYLE_LINENUMBER_CURSOR = lexers.STYLE_LINENUMBER
+lexers.STYLE_CURSOR = 'reverse'
+lexers.STYLE_CURSOR_PRIMARY = lexers.STYLE_CURSOR..',fore:yellow'
+lexers.STYLE_CURSOR_LINE = 'fore:white'
+lexers.STYLE_COLOR_COLUMN = 'back:red'
+lexers.STYLE_SELECTION = 'back:red'
+lexers.STYLE_STATUS = 'back:white,fore::black'
+lexers.STYLE_STATUS_FOCUSED = 'back:white,fore:red'
+lexers.STYLE_SEPARATOR = lexers.STYLE_DEFAULT
+lexers.STYLE_INFO = 'fore:default,back:default,bold'
+lexers.STYLE_EOF = ''
