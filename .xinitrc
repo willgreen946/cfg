@@ -12,7 +12,7 @@ setxkbmap -layout gb
 xrandr -r 60
 
 # Lower brightness
-xbacklight -set 50
+xbacklight -set 30 
 
 # Thinkpad middle click scroll
 xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
@@ -27,11 +27,8 @@ synclient TouchpadOff=1
 
 # Wallpaper
 xsetroot -solid 'rgb:00/00/00'
-#feh --bg-scale ~/Pictures/greenmountains.jpg
-feh --bg-scale ~/Pictures/ibm.jpg
 
 # User Programs
 slstatus &
-#st -e tmux &
-st &
+st -e tmux &
 dwm
