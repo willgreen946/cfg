@@ -1,3 +1,6 @@
-vim.cmd("colorscheme default")
-vim.cmd("set laststatus=1")
 vim.cmd("set tabstop=2")
+vim.cmd("set laststatus=1")
+vim.cmd("set shiftwidth=2")
+vim.cmd("set colorcolumn=80")
+vim.cmd("colorscheme default")
+vim.cmd("set t_Co=16")
