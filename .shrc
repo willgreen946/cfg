@@ -1,15 +1,14 @@
-root_cmd="doas"
-wireless_interface="iwn0"
-
-export EDITOR="vi"
-export PAGER="less"
+PS1="# "
+ROOT_CMD=doas
+WIRELESS_INTERFACE=iwn0
+EDITOR=vi
+PAGER=less
+BROWSER=lynx
 
 set -o vi
 set -o posix
 
-PS1="# "
-
-# Swap Escape and Caps_Lock on the TTY
+# Swap Escape and Caps_Lock on the TTY (OpenBSD)
 #wsconsctl keyboard.map+="keysym Caps_Lock = Escape"
 
 # Verbose commands
@@ -18,17 +17,17 @@ alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
 
-alias net_home="$root_cmd dhclient $wireless_interface && $root_cmd ifconfig $wireless_interface nwid \"BT-J5A85S\" wpakey \"c7G7dbLQK7APhE\""
+# Internet relating things
+alias net_home="$ROOT_CMD sh ~/Scripts/wifi/home.sh $WIRELESS_INTERFACE"
+alias net_list="$ROOT_CMD sh ~/Scripts/wifi/ssid.sh $WIRELESS_INTERFACE"
+alias net_eduroam="$ROOT_CMD sh ~/Scripts/wifi/eduroam.sh $WIRELESS_INTERFACE"
 alias net_get_tune="yt-dlp --extract-audio --audio-format wav $1"
-alias net_search_youtube="sh ~/scripts/ytfzf/ytfzf"
-alias net_search_linux="lynx https://linuxsheet.com"
-alias net_search="lynx https://duckduckgo.com"
+alias net_search_youtube="sh ~/Scripts/ytfzf/ytfzf"
+alias net_search_linux="$BROWSER https://linuxsheet.com"
+alias net_search="$BROWSER https://duckduckgo.com"
 
 # Text editor
-alias vim="elvis"
+alias vim="nvim"
 
 # Linux
 #alias net_list="$root_cmd iw $wireless_interface scan | grep SSID"
-
-# OpenBSD
-alias net_list="$root_cmd ifconfig $wireless_interface scan | grep nwid | awk '{print \$2}'"
