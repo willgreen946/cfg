@@ -11,6 +11,9 @@ set -o posix
 # Swap Escape and Caps_Lock on the TTY (OpenBSD)
 #wsconsctl keyboard.map+="keysym Caps_Lock = Escape"
 
+# For OpenBSD only
+alias gcc="egcc"
+
 # Verbose commands
 alias ls="ls -lA"
 alias cp="cp -v"
