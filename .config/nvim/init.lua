@@ -8,8 +8,8 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set showtabline=2")
 vim.cmd("set termguicolors")
 vim.cmd("set colorcolumn=80")
-vim.cmd("colorscheme base16-spacemacs")
--- vim.cmd("colorscheme base16-macintosh")
+--vim.cmd("colorscheme base16-spacemacs")
+vim.cmd("colorscheme base16-macintosh")
 vim.cmd("let base16colorspace=256")
 
 -- Key bindings
