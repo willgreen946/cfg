@@ -30,7 +30,7 @@ synclient TouchpadOff=1
 
 # Wallpaper
 xsetroot -solid 'rgb:00/22/44'
-feh --bg-scale ~/Pictures/tiger.jpg
+feh --bg-scale ~/Pictures/serverX.jpg
 
 # Run scripts
 # sh ~/Scripts/Monitor/left_right.sh
