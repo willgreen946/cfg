@@ -1,1 +1,47 @@
+" Single panel
 only
+
+" Default editor
+set vicmd=vi
+
+" Plain text extensions
+filextype *.txt vi %f
+
+" Code extensions
+filextype *.c nvim %f
+filextype *.S nvim %f
+filextype *.m nvim %f
+filextype *.h nvim %f
+filextype *.C nvim %f
+filextype *.pl nvim %f
+filextype *.ex nvim %f
+filextype *.sh nvim %f
+filextype *.cc nvim %f
+filextype *.cs nvim %f
+filextype *.hh nvim %f
+filextype *.rs nvim %f
+filextype *.c++ nvim %f
+filextype *.cxx nvim %f
+filextype *.cpp nvim %f
+filextype *.hpp nvim %f
+filextype *.vim nvim %f
+filextype *.lua nvim %f
+filextype *.asm nvim %f
+
+" Binary extensions
+filextype *.o bvi %f
+filextype *.so bvi %f
+filextype *.exe bvi %f
+filextype *.dll bvi %f
+
+" Image extensions
+filextype *.png feh %f
+filextype *.jpg feh %f
+filextype *.svg feh %f
+filextype *.jpeg feh %f
+
+" Document extensions
+filextype *.pdf mupdf %f
+filextype *.doc libreoffice %f
+filextype *.docx libreoffice %f
+filextype *.pptx libreoffice %f
