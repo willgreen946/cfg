@@ -30,10 +30,7 @@ synclient TouchpadOff=1
 
 # Wallpaper
 xsetroot -solid 'rgb:00/22/44'
-feh --bg-scale ~/Pictures/serverX.jpg
-
-# Run scripts
-# sh ~/Scripts/Monitor/left_right.sh
+feh --randomize --bg-scale ~/Pictures/Wallpapers/
 
 picom &
 slstatus &
