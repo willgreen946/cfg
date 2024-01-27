@@ -1,48 +1,28 @@
-SYS=`uname`
-VOID_PKG_MAN="xbps-install -s "
-OPENBSD_PKG_MAN="pkg_add "
-
-UNIVERSAL_PKG_LIST="gcc \
+PKG_LIST="gcc \
 pcc \
 tcc \
-mono \
-mupdf \
-vifm \
-bvi \
-lynx \
-nvi \
 git \
-mpv \
-htop \
-libreoffice \
-lynx"
-
-VOID_PKG_LIST="base-devel \
-libX11-devel \
-libXft-devel \
-libXinerama-devel \
-fontconfig-devel \
-firefox \
-powertop \
-linux6.6-headers \
-xterm \
-xorg \
-tmux \
-$UNIVERSAL_PKG_LIST"
-
-OPENBSD_PKG_LIST="wpa_supplicant \
 g++ \
+mpv \
+feh \
+bvi \
+mono \
+vifm \
+lynx \
+htop \
+mupdf \
+spleen \
+neovim \
 obsdfreqd \
-$UNIVERSAL_PKG_LIST"
+libreoffice \
+qutebrowser \
+terminus-font \
+wpa_supplicant"
 
-if [$SYS == "linux"]
-then
-	exec $VOID_PKG_MAN $VOID_PKG_LIST &
-elif [$SYS == "OpenBSD"]
-then
-	exec $OPENBSD_PKG_MAN $OPENBSD_PKG_LIST &
-fi
+pkg_add -Uu
+pkg_add $PKG_LIST
 
-exec git clone https://github.com/willgreen946/cfg &
-exec git clone https://github.com/willgreen946/dwm &
-exec git clone https://github.com/willgreen946/slstatus &
+git clone https://github.com/willgreen946/st
+git clone https://github.com/willgreen946/cfg
+git clone https://github.com/willgreen946/dwm
+git clone https://github.com/willgreen946/slstatus
