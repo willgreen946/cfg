@@ -1,28 +1,54 @@
-PKG_LIST="gcc \
+# First install all the text editors I want
+pkg_add vis neovim bvi
+
+# Install development tools
+pkg_add gcc \
+g++ \
 pcc \
 tcc \
-git \
-g++ \
-mpv \
-feh \
-bvi \
 mono \
-vifm \
-lynx \
-htop \
+objfw \
+riscv-elf-gcc \
+qemu \
+nasm \
+gmake \
+fltk
+
+# Install X11 programs (BLOAT)
+pkg_add feh \
 mupdf \
-spleen \
-neovim \
-obsdfreqd \
+mpv \
 libreoffice \
-qutebrowser \
-terminus-font \
-wpa_supplicant"
+links \
+tor-browser \
+scrot \
+ungoogled-chromium 
 
-pkg_add -Uu
-pkg_add $PKG_LIST
+# Install utils
+pkg_add git \
+chafa \
+yt-dlp \
+htop \
+wpa_supplicant \
+hfsplus \
+links+ \
+curl \
+wget \
+transmission \
+groff \
+p7zip \
+zip \
+unzip \
+qemu \
+obsdfreqd \
+fzf \
+jq
 
+# Install fonts
+pkg_add spleen terminus-font font-awesome
+
+# Download git repos
 git clone https://github.com/willgreen946/st
-git clone https://github.com/willgreen946/cfg
 git clone https://github.com/willgreen946/dwm
+git clone https://github.com/willgreen946/cfg
 git clone https://github.com/willgreen946/slstatus
