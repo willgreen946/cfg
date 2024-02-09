@@ -1,4 +1,3 @@
-PS1="# "
 ROOT_CMD=doas
 WIRELESS_INTERFACE=iwn0
 EDITOR=vi
