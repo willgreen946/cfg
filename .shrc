@@ -1,18 +1,15 @@
-PS1="[`whoami`]$ "
+PS1="# "
 ROOT_CMD=doas
 WIRELESS_INTERFACE=iwn0
 EDITOR=vi
 PAGER=less
-BROWSER=lynx
+BROWSER=links
 
 set -o vi
 set -o posix
 
 # Swap Escape and Caps_Lock on the TTY (OpenBSD)
 #wsconsctl keyboard.map+="keysym Caps_Lock = Escape"
-
-# For OpenBSD only
-alias gcc="egcc"
 
 # Verbose commands
 alias ls="ls -lA"
@@ -30,6 +27,7 @@ alias net_get_tune="yt-dlp --extract-audio --audio-format wav $1"
 alias net_search_youtube="sh ~/Scripts/ytfzf/ytfzf"
 alias net_search_linux="$BROWSER https://linuxsheet.com"
 alias net_search="$BROWSER https://duckduckgo.com"
+alias net_read="rdrview -B $BROWSER $1"
 
 # Text editor
 alias vim="nvim"

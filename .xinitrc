@@ -7,7 +7,11 @@ setxkbmap -option caps:swapescape
 setxkbmap -layout gb
 
 # OpenBSD specfic commands
-sndioctl output.level=0.3
+#sndioctl output.level=0.3
+#xbacklight -set 30 
+
+# NetBSD specfic commands
+intel_backlight 30
 
 # Font path for urxvt
 xset +fp /usr/local/share/fonts/spleen
@@ -15,7 +19,6 @@ xset +fp /usr/local/share/fonts/spleen
 # Set refresh rate (60Hz) and lower the brightness
 # This doesnt seem to work when multiple monitors are connected
 xrandr -r 60
-xbacklight -set 30 
 
 # Thinkpad middle click scroll
 xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
@@ -24,15 +27,17 @@ xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
 
 # Mouse speed
 xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.3
+#xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.6
 
 # Disable trackpad
 synclient TouchpadOff=1
 
 # Wallpaper
 xsetroot -solid 'rgb:00/22/44'
-feh --randomize --bg-scale ~/Pictures/Wallpapers/
+#feh --randomize --bg-scale ~/Pictures/Wallpapers/
+#feh --bg-scale ~/Pictures/Wallpapers/purplespace.jpg
 
-picom &
+#picom &
 slstatus &
 st -e tmux &
 dwm
