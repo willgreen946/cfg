@@ -8,10 +8,11 @@ setxkbmap -layout gb
 
 # OpenBSD specfic commands
 #sndioctl output.level=0.3
-#xbacklight -set 30 
 
 # NetBSD specfic commands
-intel_backlight 30
+#intel_backlight 30
+
+xbacklight -set 30
 
 # Font path for urxvt
 xset +fp /usr/local/share/fonts/spleen
@@ -34,10 +35,8 @@ synclient TouchpadOff=1
 
 # Wallpaper
 xsetroot -solid 'rgb:00/22/44'
-#feh --randomize --bg-scale ~/Pictures/Wallpapers/
-#feh --bg-scale ~/Pictures/Wallpapers/purplespace.jpg
+feh --bg-scale ~/Pictures/fbsd.png
 
-#picom &
 slstatus &
 st -e tmux &
 dwm
