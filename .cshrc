@@ -1,6 +1,6 @@
 set ROOT_CMD doas
 set WIRELESS_INTERFACE iwn0
-set EDITOR vi
+set EDITOR nvi
 set PAGER less
 set BROWSER links
 set prompt='[%n@%m %c]$ '
@@ -27,9 +27,6 @@ alias net_get_tune "yt-dlp --extract-audio --audio-format wav $1"
 alias net_search_youtube "sh ~/Scripts/ytfzf/ytfzf"
 alias net_search_linux "$BROWSER https://linuxsheet.com"
 alias net_search "$BROWSER https://duckduckgo.com"
-
-# Text editor
-alias vim "nvim"
 
 # Linux
 #alias net_list="$root_cmd iw $wireless_interface scan | grep SSID"

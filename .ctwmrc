@@ -200,16 +200,16 @@ Monochrome
     MapWindowBackground 	"white"
 }
 
-menu "NetBSD"
+menu "FreeBSD"
 {
-    "NetBSD"			  f.title
+    "FreeBSD"			  f.title
     ""				      f.separator
     " Terminal"		  !"st &"
     " Xterm"			  !"uxterm &"
     " Calculator"	  !"xcalc &"
     " Clock"			  !"xclock -digital &"
 		" Links"        !"links -g https://duckduckgo.com &"
-		" Firefox"      !"firefox &"
+		" librewolf"    !"librewolf &"
     ""				      f.separator
     " Applications" f.menu "appmenu"
     ""				      f.separator
@@ -299,9 +299,9 @@ Button1 =	: icon | iconmgr	: f.iconify
 Button2 =	: icon			: f.move
 Button3 =	: icon | iconmgr	: f.raiselower
 
-Button1 =	: root		: f.menu "NetBSD"
+Button1 =	: root		: f.menu "FreeBSD"
 Button2 =	: root		: f.menu "TwmAllWindows"
-Button3 =	: root		: f.menu "NetBSD"
+Button3 =	: root		: f.menu "FreeBSD"
 
 #
 # Mod1 is the "Alt/Meta" key.
@@ -375,8 +375,8 @@ Button3 = mod4	: window 	: f.resize
 
 "slash"  = mod1 | c : all : f.menu "TwmAllWindows"
 "slash"  = mod4 : all     : f.menu "TwmAllWindows"
-"p"      = mod1 | c : all : f.menu "NetBSD"
-"p"      = mod4 : all     : f.menu "NetBSD"
+"p"      = mod1 | c : all : f.menu "FreeBSD"
+"p"      = mod4 : all     : f.menu "FreeBSD"
 
 # vi-style directions
 "j"      = mod1 | control : window : f.jumpdown "10"

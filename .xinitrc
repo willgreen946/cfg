@@ -36,9 +36,6 @@ synclient TouchpadOff=1
 
 # Wallpaper
 xsetroot -solid 'rgb:00/22/44'
-feh --bg-scale ~/Pictures/Wallpapers/bigsur.jpg
 
-slstatus &
 st -e tmux &
-picom &
-dwm
+ctwm

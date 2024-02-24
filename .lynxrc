@@ -125,6 +125,16 @@ cookie_reject_domains=
 
 cookie_strict_invalid_domains=
 
+# dir_list_order specifies the directory list order under DIRED_SUPPORT
+# (if implemented).  The default is "ORDER_BY_NAME"
+dir_list_order=ORDER_BY_NAME
+
+# dir_list_styles specifies the directory list style under DIRED_SUPPORT
+# (if implemented).  The default is "MIXED_STYLE", which sorts both
+# files and directories together.  "FILES_FIRST" lists files first and
+# "DIRECTORIES_FIRST" lists directories first.
+dir_list_style=MIXED_STYLE
+
 # If emacs_keys is to "on" then the normal EMACS movement keys:
 #   ^N = down    ^P = up
 #   ^B = left    ^F = right
