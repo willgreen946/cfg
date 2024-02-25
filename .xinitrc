@@ -37,5 +37,9 @@ synclient TouchpadOff=1
 # Wallpaper
 xsetroot -solid 'rgb:00/22/44'
 
+# Monitor settings
+sh ~/Scripts/Monitor/dell_only.sh
+# sh ~/Scripts/Monitor/left_right.sh
+
 st -e tmux &
 ctwm
