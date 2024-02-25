@@ -20,24 +20,27 @@ ShowIconManager
 
 # 3D icon managers do not seemingly honor IconManagerHighlight,
 # which makes them slightly less useful
-#UseThreeDIconManagers
-#UseThreeDWMap
+UseThreeDIconManagers
+UseThreeDWMap
 UseThreeDBorders
-#UseThreeDMenus
+UseThreeDMenus
 UseThreeDTitles
 
-ThreeDBorderWidth         3
+ThreeDBorderWidth         8 
 
 # TODO: we can use syscmd() in combination with xdpyinfo to detect
 # HiDPI screens and set appropiate fonts.
 #
 # need some good scaled bitmap fonts imported - terminus or spleen
 # would be good candidates
-MenuFont         "-misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*"
-TitleFont        "-misc-fixed-bold-r-*-*-18-*-*-*-*-*-*-*"
+#MenuFont         "-misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*"
+#TitleFont        "-misc-fixed-bold-r-*-*-18-*-*-*-*-*-*-*"
+TitleFont "-misc-spleen-medium-r-normal--16-160-72-72-c-80-iso10646-1"
+#TitleFont "-misc-spleen 12x24-medium-r-normal--0-0-0-0-c-0-iso10646-1"
 IconManagerFont  "-misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*"
 IconFont         "-misc-fixed-bold-r-*-*-18-*-*-*-*-*-*-*"
 ResizeFont       "-misc-fixed-medium-r-*-*-18-*-*-*-*-*-*-*"
+MenuFont         "-misc-spleen-medium-r---24-*-*-*-*-*-*-*"
 WorkSpaceFont    "-misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*"
 
 RestartPreviousState
@@ -85,8 +88,6 @@ StayUpMenus
 WarpToDefaultMenuEntry
 MenuShadowDepth      1
 
-TitleFocus
-
 # warp through all windows in the current workspace
 WindowRing
 WarpRingOnScreen
@@ -105,7 +106,7 @@ LeftTitleButton           ":xpm:dot"      = f.menu "titleops"
 RightTitleButton          ":xpm:resize"   = f.resize
 RightTitleButton          ":xpm:cross"    = f.delete
 
-BorderWidth               4
+BorderWidth               0 
 BorderShadowDepth         2
 BorderResizeCursors
 
@@ -116,7 +117,7 @@ IconManagerGeometry       "200x-1-1+0" 1
 IconifyByUnmapping
 
 ReallyMoveInWorkspaceManager
-MapWindowCurrentWorkSpace {  "black" "firebrick" }
+MapWindowCurrentWorkSpace {  "#000000" "#AB2B28" }
 DontToggleWorkSpaceManagerState
 DontWarpCursorInWMap
 NoShowOccupyAll	
@@ -128,11 +129,12 @@ WorkSpaceManagerGeometry  "60x240-4-4" 1
 
 WorkSpaces 
 {
-    "1"    { "lavender" "black" "darkslateblue" "white" }
-    "2"    { "lavender" "black" "darkslateblue" "white" }
-    "3"    { "lavender" "black" "darkslateblue" "white" }
-    "4"    { "lavender" "black" "darkslateblue" "white" }
-    "5"    { "lavender" "black" "darkslateblue" "white" }
+#                                 bg        fg
+    "1"    { "#AB2B28" "black" "#333333" "white" }
+    "2"    { "#AB2B28" "black" "#333333" "white" }
+    "3"    { "#AB2B28" "black" "#333333" "white" }
+    "4"    { "#AB2B28" "black" "#333333" "white" }
+    "5"    { "#AB2B28" "black" "#333333" "white" }
 }
 
 Cursors
@@ -152,47 +154,47 @@ Cursors
 
 Color
 {
-  BorderColor           "firebrick"
+  BorderColor           "#AB2B28"
 
-  BorderTileBackground  "steelblue"
-  BorderTileForeground  "steelblue"
+  BorderTileBackground  "#8C8C8C"
+  BorderTileForeground  "#8C8C8C"
 
-  DefaultBackground     "grey70"
-  DefaultForeground     "black"
+  DefaultBackground     "#8C8C8C"
+  DefaultForeground     "#000000"
 
-  TitleBackground       "lavender"
-  TitleForeground       "black" 
+  TitleBackground       "#AB2B28"
+  TitleForeground       "#FFFFFF" 
 
-  MenuBackground        "lavender"
-  MenuForeground        "black"
-  MenuTitleBackground   "darkorange"
-  MenuTitleForeground   "black"
-  MenuShadowColor 	"gray15"
+  MenuBackground        "#8C8C8C"
+  MenuForeground        "#000000"
+  MenuTitleBackground   "#AB2B28"
+  MenuTitleForeground   "#000000"
+  MenuShadowColor 	    "grey15"
 
-  IconBackground        "black"
-  IconForeground        "white"
-  IconBorderColor       "gray45"
+  IconBackground        "#000000"
+  IconForeground        "#FFFFFF"
+  IconBorderColor       "#AB2B28"
 
-  IconManagerBackground "lavender"
-  IconManagerForeground "black"
-  IconManagerHighlight  "firebrick"
+  IconManagerBackground "#8C8C8C"
+  IconManagerForeground "#000000"
+  IconManagerHighlight  "#AB2B28"
 
-  MapWindowBackground   "lavender"
-  MapWindowForeground   "black"	
+  MapWindowBackground   "#8C8C8C"
+  MapWindowForeground   "#000000"	
 }
 
 Monochrome
 {
-    BorderColor 		"black"
+    BorderColor 					"black"
 
     BorderTileForeground 	"black"
     BorderTileBackground 	"white"
 
-    TitleForeground 		"black"
-    TitleBackground 		"white"
+    TitleForeground 			"black"
+    TitleBackground 			"white"
 
-    MenuForeground 		"black"
-    MenuBackground 		"white"
+    MenuForeground 				"black"
+    MenuBackground 				"white"
     MenuTitleForeground 	"black"
     MenuTitleBackground 	"white"
 
@@ -211,13 +213,9 @@ menu "FreeBSD"
 		" Links"        !"links -g https://duckduckgo.com &"
 		" librewolf"    !"librewolf &"
     ""				      f.separator
-    " Applications" f.menu "appmenu"
-    ""				      f.separator
     " Restart CTWM"	f.twmrc
     " Quit"			    f.quit
 }
-
-syscmd(/usr/X11R7/libexec/ctwm_app_menu)
 
 menu "titleops"
 {
@@ -281,7 +279,6 @@ StartIconified
 
 NoBorder
 {
-   "TWM Icon Manager"
 }
 
 Function "raise-move"          { f.raise f.deltastop f.forcemove }
