@@ -42,4 +42,6 @@ sh ~/Scripts/Monitor/dell_only.sh
 # sh ~/Scripts/Monitor/left_right.sh
 
 st -e tmux &
-ctwm
+slstatus &
+picom &
+dwm
