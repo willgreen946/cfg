@@ -1,5 +1,4 @@
-# Swap escape key and caps lock
-xmodmap -e "clear lock"
+# Swap escape key and caps lock xmodmap -e "clear lock"
 xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 setxkbmap -option caps:swapescape
 
@@ -7,10 +6,10 @@ setxkbmap -option caps:swapescape
 setxkbmap -layout gb
 
 # Net/FreeBSD
-intel_backlight 30
+#intel_backlight 30
 
 # OpenBSD & Linux
-#xbacklight -set 30
+xbacklight -set 30
 
 # OpenBSD specfic commands
 #sndioctl output.level=0.3
@@ -36,13 +35,16 @@ synclient TouchpadOff=1
 
 # Wallpaper
 xsetroot -solid 'rgb:00/22/44'
+#feh --bg-scale ~/Pictures/tiger.jpg
+#feh --bg-scale ~/Pictures/fbsd.png
+#slstatus &
+#st -e tmux &
+xterm -e tmux &
+xconsole &
+xclock &
 
-# Monitor settings
-sh ~/Scripts/Monitor/dell_only.sh
-# sh ~/Scripts/Monitor/left_right.sh
-
-feh --bg-scale ~/Pictures/tiger.jpg
-st -e tmux &
-slstatus &
-picom &
-dwm
+# Window managers 
+#fvwm
+ctwm
+#dwm
+#mate-session

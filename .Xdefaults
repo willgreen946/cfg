@@ -19,7 +19,7 @@ UXTerm*cursorBlink: True
 URxvt*cursorBlink: True
 
 ! Fonts
-XTerm*faceName: spleen:pixelsize=24:antialias=true
+XTerm*faceName: terminus:bold:pixelsize=24:antialias=true
 UXTerm*faceName: spleen:pixelsize=24:antialias=true
 XTerm*allowBoldFonts: True 
 UXTerm*allowBoldFonts: True 
@@ -51,8 +51,6 @@ URxvt*VT100*geometry: 80x24
 ! Dark Mode
 XTerm*background: #000000
 XTerm*foreground: #AAAAAA
-XTerm*foreground: #81B5AC
-XTerm*background: #031A16
 UXTerm*background: #000000
 UXTerm*foreground: #AAAAAA
 URxvt*background: #000000
@@ -125,3 +123,8 @@ URxvt*color7: #AAAAAA
 URxvt*color15: #FFFFFF
 
 URxvt*depth: 32
+
+xclock*foreground: #000000
+xclock*background: #8C8C8C
+xconsole*foreground: #000000
+xconsole*background: #8C8C8C

@@ -1,7 +1,7 @@
 #
 # $NetBSD: system.ctwmrc,v 1.1.2.3 2021/03/09 15:44:50 martin Exp $
 #
-# ctwmrc by nia
+# ctwmrc by nia, with modifications by will green
 #
 # An attempt to strike a usability balance that makes keys and buttons
 # do the thing users of various operating systems expect them to do.
@@ -33,15 +33,12 @@ ThreeDBorderWidth         8
 #
 # need some good scaled bitmap fonts imported - terminus or spleen
 # would be good candidates
-#MenuFont         "-misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*"
-#TitleFont        "-misc-fixed-bold-r-*-*-18-*-*-*-*-*-*-*"
-TitleFont "-misc-spleen-medium-r-normal--16-160-72-72-c-80-iso10646-1"
-#TitleFont "-misc-spleen 12x24-medium-r-normal--0-0-0-0-c-0-iso10646-1"
-IconManagerFont  "-misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*"
-IconFont         "-misc-fixed-bold-r-*-*-18-*-*-*-*-*-*-*"
-ResizeFont       "-misc-fixed-medium-r-*-*-18-*-*-*-*-*-*-*"
-MenuFont         "-misc-spleen-medium-r---24-*-*-*-*-*-*-*"
-WorkSpaceFont    "-misc-fixed-medium-r-*-*-14-*-*-*-*-*-*-*"
+TitleFont "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
+IconManagerFont "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
+IconFont "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
+ResizeFont "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
+MenuFont "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
+WorkSpaceFont "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
 
 RestartPreviousState
 
@@ -156,7 +153,8 @@ Color
 {
   BorderColor           "#AB2B28"
 
-  BorderTileBackground  "#8C8C8C"
+  #BorderTileBackground  "#8C8C8C"
+  BorderTileBackground  "navyblue"
   BorderTileForeground  "#8C8C8C"
 
   DefaultBackground     "#8C8C8C"
@@ -202,16 +200,22 @@ Monochrome
     MapWindowBackground 	"white"
 }
 
-menu "FreeBSD"
+menu "CTWM"
 {
-    "FreeBSD"			  f.title
+    "CTWM"			  f.title
     ""				      f.separator
-    " Terminal"		  !"st &"
-    " Xterm"			  !"uxterm &"
+    " ST"		        !"st &"
+    " Xterm"			  !"xterm &"
+    " UXterm"			  !"uxterm &"
+		" Elvis"        !"elvis -G x11 &"
     " Calculator"	  !"xcalc &"
-    " Clock"			  !"xclock -digital &"
-		" Links"        !"links -g https://duckduckgo.com &"
-		" librewolf"    !"librewolf &"
+    " Analog Clock" !"xclock -analog &"
+    " Digital Clock"!"xclock -digital &"
+		" Links"        !"links -g https://search.datura.network &"
+		" XConsole"     !"xconsole &"
+		" Firefox"      !"firefox-esr &"
+		" Librewolf"    !"librewolf &"
+    " Libreoffice"  !"libreoffice &"
     ""				      f.separator
     " Restart CTWM"	f.twmrc
     " Quit"			    f.quit
@@ -262,6 +266,9 @@ NoTitle
 {
    "TWM Icon Manager"
    "WorkSpaceManager"
+   "xclock"
+   "xconsole"
+   "xconsole"
 }
 
 WindowRingExclude
@@ -269,6 +276,7 @@ WindowRingExclude
    "TWM Icon Manager"
    "WorkSpaceManager"
    "XClock"
+   "xclock"
    "xsm"
    "xconsole"
 }
@@ -279,6 +287,8 @@ StartIconified
 
 NoBorder
 {
+#  "xclock"
+#  "xconsole"
 }
 
 Function "raise-move"          { f.raise f.deltastop f.forcemove }
@@ -296,9 +306,9 @@ Button1 =	: icon | iconmgr	: f.iconify
 Button2 =	: icon			: f.move
 Button3 =	: icon | iconmgr	: f.raiselower
 
-Button1 =	: root		: f.menu "FreeBSD"
+Button1 =	: root		: f.menu "CTWM"
 Button2 =	: root		: f.menu "TwmAllWindows"
-Button3 =	: root		: f.menu "FreeBSD"
+Button3 =	: root		: f.menu "titleops"
 
 #
 # Mod1 is the "Alt/Meta" key.
@@ -372,8 +382,8 @@ Button3 = mod4	: window 	: f.resize
 
 "slash"  = mod1 | c : all : f.menu "TwmAllWindows"
 "slash"  = mod4 : all     : f.menu "TwmAllWindows"
-"p"      = mod1 | c : all : f.menu "FreeBSD"
-"p"      = mod4 : all     : f.menu "FreeBSD"
+"p"      = mod1 | c : all : f.menu "CTWM"
+"p"      = mod4 : all     : f.menu "CTWM"
 
 # vi-style directions
 "j"      = mod1 | control : window : f.jumpdown "10"

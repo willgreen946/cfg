@@ -1,17 +1,4 @@
 set flash
 set number
 set tabstop=2
-color prep magenta 
-color keyword red 
-color fixed white
-color lnum yellow 
-color string blue 
-color normal yellow 
-color function white 
-color number magenta 
-color variable magenta 
-color other bold red 
-color comment green 
-color char like string
-color ruler yellow
-color showmode yellow
+set font="-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
