@@ -9,7 +9,7 @@ setxkbmap -layout gb
 #intel_backlight 30
 
 # OpenBSD & Linux
-xbacklight -set 30
+#xbacklight -set 30
 
 # OpenBSD specfic commands
 #sndioctl output.level=0.3
@@ -19,19 +19,21 @@ xset +fp /usr/local/share/fonts/spleen
 
 # Set refresh rate (60Hz) and lower the brightness
 # This doesnt seem to work when multiple monitors are connected
-xrandr -r 60
+#xrandr -r 60
 
 # Thinkpad middle click scroll
-xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
-xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Button" 2
-xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
+#xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
+#xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Button" 2
+#xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
 
 # Mouse speed
-xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.3
+#xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.3
 #xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.6
 
 # Disable trackpad
 synclient TouchpadOff=1
+
+sh ~/Scripts/x11/dell_only.sh
 
 # Wallpaper
 xsetroot -solid 'rgb:00/22/44'
@@ -45,6 +47,7 @@ xclock &
 
 # Window managers 
 #fvwm
-ctwm
+#ctwm
+twm
 #dwm
 #mate-session

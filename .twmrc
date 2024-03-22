@@ -1,0 +1,96 @@
+NoDefaults
+NoGrabServer
+RaiseOnClick
+ShowIconManager
+DecorateTransients
+RandomPlacement "on"
+RestartPreviousState
+
+# Icon manager settings
+NoIconManagerFocus
+IconifyByUnmapping
+MaxIconTitleWidth 120
+IconManagerGeometry "200x-1-1+0" 1
+
+Color
+{
+  BorderColor           "Navyblue"
+  MenuBackground        "#8C8C8C"
+  MenuForeground        "#000000"
+  TitleBackground       "Navyblue"
+  TitleForeground       "#F0F0F0"
+  MenuShadowColor       "#000000"
+  MenuBorderColor       "#000000"
+  IconForeground        "#000000"
+  IconBackground        "#8C8C8C"
+  DefaultBackground     "#8C8C8C"
+  DefaultForeground     "#000000"
+  MenuTitleBackground   "Navyblue"
+  MenuTitleForeground   "#F0F0F0"
+  IconManagerForeground "#000000"
+  IconManagerBackground "#8C8C8C"
+}
+
+NoTitle
+{
+  "xclock"
+  "xconsole"
+  "TWM Icon Manager"
+}
+
+menu "RootMenu"
+{
+  "TWM"               f.title
+  "XTerm"             !"xterm &"
+  "HTOP"              !"xterm -e htop &"
+  "Links"             !"links -g https://search.datura.network &"
+  "Firefox"           !"firefox &"
+  "XConsole"          !"xconsole &"
+  "Calculator"        !"xcalc &"
+  "Analog Clock"      !"xclock -analog -chime &"
+  "Digital Clock"     !"xclock -digital -chime &"
+  ""                  f.nop
+  "Move"              f.move
+  "Raise"             f.raise
+  "Lower"             f.lower
+  "Focus"             f.focus
+  "UNFocus"           f.unfocus
+  "Resize"            f.resize
+  "Iconify"           f.iconify
+  "Show Icon Manager" f.showiconmgr
+  "Hide Icon Manager" f.hideiconmgr
+  ""                  f.nop
+  "Kill"              f.destroy
+  "Delete"            f.delete
+  ""                  f.nop
+  "Restart"           f.twmrc
+  "Quit"              f.quit
+}
+
+# This is a nice font similar to terminus
+TitleFont       "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
+IconManagerFont "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
+IconFont        "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
+ResizeFont      "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
+MenuFont        "-misc-fixed-medium-r-normal--15-120-100-100-c-90-iso8859-1"
+
+Function "raise-move"       { f.raise f.deltastop f.forcemove }
+Function "raise-and-resize" { f.raise f.deltastop f.resize }
+Function "alt-tab" { f.unfocus f.raise }
+Function "alt-tab-back" { f.focus f.lower }
+
+# Root window mouse settings
+Button1 = : root  : f.menu "RootMenu"
+Button1 =   mod1  : window : f.function "raise-move"
+
+# Window mouse settings
+Button1 = : title : f.function "raise-move"
+Button2 = : title : f.function "raise-and-resize"
+
+# Icon manager mouse settings
+Button1 = : icon | iconmgr : f.iconify
+Button2 = : icon           : f.move
+
+# Alt Tab
+"Tab" = mod1     : all : f.function "alt-tab"
+"Tab" = mod1 | s : all : f.function "alt-tab-back"
