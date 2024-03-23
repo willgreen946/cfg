@@ -1,0 +1,151 @@
+Style AppClass MiniIcon "img.png"
+
+DefaultFont "xft:terminus:bold:size=10:antialias=True"
+
+# Mouse actions for moving between desktops
+ClickTime 750
+EdgeThickness 1
+EdgeScroll 100 100
+EdgeResistance 250 10
+Style * EdgeMoveDelay 350, EdgeMoveResistance 350
+
+######## XP Inspired Theme ########
+#   1 - Inactive Windows
+#   2 - Active Window
+#   3 - Inactive Windows Borders
+#   4 - Active Windows Borders
+#Colorset 1 fg rgb:e8/f5/f5, bg rgb:3d/60/90, fgsh rgb:22/48/7a
+#Colorset 2 fg rgb:df/ff/ff, bg rgb:03/56/cc, fgsh rgb:22/48/7a
+#Colorset 3 bg rgb:45/61/9e, sh rgb:4a/5e/7d, hi rgb:4c/6f/af
+#Colorset 4 bg rgb:07/49/de, sh rgb:25/56/a3, hi rgb:06/5b/f6
+
+# Window Button Locations [1 Title 642]
+#Mouse 1 2 A Close
+#Mouse 1 4 A Maximize
+#Mouse 1 6 A Iconify
+#Mouse 1 1 A Menu MenuWindowOps
+
+#AddToDecor RedmondXPDecor
+#+ TitleStyle AllActive   TiledPixmap redmondxp/title-active.png
+#+ TitleStyle AllInactive TiledPixmap redmondxp/title-inactive.png
+#+ ButtonStyle All Simple -- UseTitleStyle
+#+ BorderStyle   Simple -- HiddenHandles NoInset Raised
+#+ TitleStyle    LeftJustified -- Flat
+#+ ButtonStyle   All -- Flat
+#+ AddButtonStyle 1 MiniIcon
+#+ AddButtonStyle 2 ActiveUp   Pixmap redmondxp/close-activeup.png
+#+ AddButtonStyle 2 ActiveDown Pixmap redmondxp/close-activedown.png
+#+ AddButtonStyle 2 Inactive   Pixmap redmondxp/close-inactive.png
+#+ AddButtonStyle 4 ActiveUp   Pixmap redmondxp/maximize-activeup.png
+#+ AddButtonStyle 4 ActiveDown Pixmap redmondxp/maximize-activedown.png
+#+ AddButtonStyle 4 Inactive   Pixmap redmondxp/maximize-inactive.png
+#+ AddButtonStyle 6 ActiveUp   Pixmap redmondxp/iconify-activeup.png
+#+ AddButtonStyle 6 ActiveDown Pixmap redmondxp/iconify-activedown.png
+#+ AddButtonStyle 6 Inactive   Pixmap redmondxp/iconify-inactive.png
+#+ AddButtonStyle 4 ToggledActiveUp   Pixmap redmondxp/unmaximize-activeup.png
+#+ AddButtonStyle 4 ToggledActiveDown Pixmap redmondxp/unmaximize-activedown.png
+#+ AddButtonStyle 4 ToggledInactive   Pixmap redmondxp/unmaximize-inactive.png
+#+ ButtonStyle All - Clear
+#+ ButtonStyle 1 - MwmDecorMenu
+#+ ButtonStyle 6 - MwmDecorMin
+#+ ButtonStyle 4 - MwmDecorMax
+#+ TitleStyle Height 27
+
+#Style * Colorset 1, HilightColorset 2, \
+#        BorderColorset 3, HilightBorderColorset 4, \
+#        BorderWidth 2, HandleWidth 2, \
+#        FvwmBorder, FirmBorder, \
+#        MWMButtons, UseDecor RedmondXPDecor
+######## End Of XP Inspired Theme ########
+
+######## OSX Decor #########
+#   1 - Inactive Windows
+#   2 - Active Window
+#   3 - Inactive Windows Borders
+#   4 - Active Windows Borders
+Colorset 1 fg black, bg rgb:98/B0/C8
+Colorset 2 fg black, bg white
+Colorset 3 fg black, bg rgb:98/B0/C8
+Colorset 4 fg black, bg rgb:98/B0/C8
+
+# Window Button Locations [135 Title 2]
+Mouse 1 1 A Close
+Mouse 1 3 A Iconify
+Mouse 1 5 A Maximize
+Mouse 1 2 A Menu MenuWindowOps
+
+DestroyDecor OSXDecor
+AddToDecor OSXDecor
++ TitleStyle AllActive TiledPixmap osx/title-active.png
++ TitleStyle AllInactive TiledPixmap osx/title-inactive.png
++ ButtonStyle All Simple -- UseTitleStyle
++ BorderStyle Simple -- HiddenHandles NoInset
++ TitleStyle Centered Height 20 -- Flat
++ ButtonStyle All -- Flat
++ AddButtonStyle 1 \
+        ActiveUp   (Pixmap osx/close-activeup.png   -- flat) \
+        ActiveDown (Pixmap osx/close-activedown.png -- flat) \
+        Inactive   (Pixmap osx/inactive.png   -- flat)
++ AddButtonStyle 2 \
+        ActiveUp   (Pixmap osx/options-activeup.png   -- flat) \
+        ActiveDown (Pixmap osx/options-activedown.png -- flat) \
+        Inactive   (Pixmap osx/inactive.png   -- flat)
++ AddButtonStyle 3 \
+        ActiveUp   (Pixmap osx/iconify-activeup.png   -- flat) \
+        ActiveDown (Pixmap osx/iconify-activedown.png -- flat) \
+        Inactive   (Pixmap osx/inactive.png   -- flat)
++ AddButtonStyle 5 \
+        ActiveUp   (Pixmap osx/maximize-activeup.png   -- flat) \
+        ActiveDown (Pixmap osx/maximize-activedown.png -- flat) \
+        Inactive   (Pixmap osx/inactive.png   -- flat)
++ ButtonStyle All - Clear
+
+Style * Colorset 1, HilightColorset 2, \
+        BorderColorset 3, HilightBorderColorset 4, \
+        BorderWidth 2, HandleWidth 2, \
+        FvwmBorder, FirmBorder, \
+        FvwmButtons, UseDecor OSXDecor
+######## End Of OSX Decor #######
+
+
+# Functions for basic functionality
+AddToFunc Resize-or-Raise	I Raise
++				M Resize
++				D Lower
+
+AddToFunc Move-or-Raise		I Raise
++				M Move
++  			D Lower
+
+AddToFunc Move-or-Iconify	I Raise
++				M Move
++				D Iconify
+
+# Switches focus with h j k l
+DestroyFunc SwitchFocus
+AddToFunc SwitchFocus
++ I Iconify off
++ I FlipFocus
++ I Raise
++ I WarpToWindow !raise 5 5
+
+# Makes a window fullscreen with no borders
+DestroyFunc TrueFullScreen 
+AddToFunc TrueFullScreen 
++ I ThisWindow (Maximized) DestroyWindowStyle
++ I TestRc (NoMatch) WindowStyle !Title, !Handles, !Borders, ResizeHintOverride, !Iconifiable, FixedPosition, FixedSize
++ I UpdateStyles
++ I ThisWindow (Maximized) Maximize
+
+# Key binds
+Key r A M Restart
+Key f A M Exec firefox-esr
+Key t A M Exec xterm
+Key k A M Next (CurrentDesk, AcceptsFocus) SwitchFocus 
+Key j A M Prev (CurrentDesk, AcceptsFocus) SwitchFocus 
+
+# Mouse binds
+Mouse 1	F	A	Resize-or-Raise
+Mouse 1	TS	A	Move-or-Raise
+Mouse 1	I	A	Move-or-Iconify
+Mouse 3	TSIF	A	RaiseLower
