@@ -6,6 +6,8 @@ EdgeThickness 1
 EdgeScroll 100 100
 EdgeResistance 250 10
 Style * EdgeMoveDelay 350, EdgeMoveResistance 350
+Style xconsole* NoTitle
+Style xclock* NoTitle
 
 # Functions for basic functionality
 AddToFunc Resize-or-Raise	I Raise
@@ -54,8 +56,13 @@ Mouse 3	TSIF	A	RaiseLower
 #   2 - Active Window
 #   3 - Inactive Windows Borders
 #   4 - Active Windows Borders
-Colorset 1 fg #F0F0F0, bg #8C8C8C
-Colorset 2 fg #FFFFFF, bg #AB2B28
+#Colorset 1 fg #F0F0F0, bg #8C8C8C
+#Colorset 2 fg #FFFFFF, bg #AB2B28
+#Colorset 3 fg #F0F0F0, bg #8C8C8C
+#Colorset 4 fg #FFFFFF, bg #8C8C8C
+
+Colorset 1 fg #F0F0F0, bg #000080 
+Colorset 2 fg #FFFFFF, bg #800000
 Colorset 3 fg #F0F0F0, bg #8C8C8C
 Colorset 4 fg #FFFFFF, bg #8C8C8C
 
@@ -92,18 +99,17 @@ Style * Colorset 1, HilightColorset 2, \
 # Root Menu
 DestroyMenu MenuFvwmRoot
 AddToMenu   MenuFvwmRoot "Fvwm" Title
-+ "&Programs%icons/programs.png%" Popup MenuPrograms
-+ "XDG &Menu%icons/apps.png%" Popup XDGMenu
-+ "&XTerm%icons/terminal.png%" Exec exec xterm
-+ "&Firefox%icons/terminal.png%" Exec exec firefox
++ "&Windows" Popup MenuWindowOpsLong 
++ "&Programs" Popup MenuPrograms
++ "&XTerm" Exec exec xterm
 + "" Nop
-+ "Fvwm&Console%icons/terminal.png%" Module FvwmConsole -terminal xterm
-+ "&Wallpapers%icons/wallpaper.png%" Popup BGMenu
-+ "M&an Pages%icons/help.png%" Popup MenuFvwmManPages
++ "Fvwm&Console" Module FvwmConsole -terminal xterm
++ "&Wallpapers" Popup BGMenu
++ "M&an Pages" Popup MenuFvwmManPages
 + "" Nop
-+ "Re&fresh%icons/refresh.png%" Refresh
-+ "&Restart%icons/restart.png%" Restart
-+ "&Quit%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
++ "Re&fresh" Refresh
++ "&Restart" Restart
++ "&Quit" Module FvwmScript FvwmScript-ConfirmQuit
 
 DestroyMenu MenuWindowOpsLong
 AddToMenu   MenuWindowOpsLong
@@ -125,3 +131,16 @@ AddToMenu   MenuWindowOpsLong
 + "StaysOnBottom"       Pick (CirculateHit) Layer 0 2
 + "" Nop
 + "Identify"            Module FvwmIdent
+
+DestroyMenu MenuPrograms
+AddToMenu MenuPrograms
++ "VIFM" Exec xterm -e vifm 
++ "HTOP" Exec xterm -e htop
++ "XTerm" Exec xterm
++ "Links" Exec links -g https://search.datura.network
++ "UXTerm" Exec uxterm
++ "Firefox" Exec firefox-esr
++ "XConsole" Exec xconsole
++ "Libreoffice" Exec libreoffice
++ "XClock (analog)" Exec xclock -chime -analog
++ "XClock (digital)" Exec xclock -chime -digital
