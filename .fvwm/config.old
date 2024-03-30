@@ -56,19 +56,15 @@ Mouse 3	TSIF	A	RaiseLower
 #   2 - Active Window
 #   3 - Inactive Windows Borders
 #   4 - Active Windows Borders
-#   7 - Menu
-#   8 - Menu
 #Colorset 1 fg #F0F0F0, bg #8C8C8C
 #Colorset 2 fg #FFFFFF, bg #AB2B28
 #Colorset 3 fg #F0F0F0, bg #8C8C8C
 #Colorset 4 fg #FFFFFF, bg #8C8C8C
 
-Colorset 1 fg #E7CEB5, bg #653024
-Colorset 2 fg #E7CEB5, bg #653024
-Colorset 3 fg #E7CEB5, bg #E7CEB5
-Colorset 4 fg #653024, bg #653024
-Colorset 7 fg #653024, bg #E7CEB5
-Colorset 8 fg #E7CEB5, bg #653024
+Colorset 1 fg #F0F0F0, bg #000080 
+Colorset 2 fg #FFFFFF, bg #800000
+Colorset 3 fg #F0F0F0, bg #8C8C8C
+Colorset 4 fg #FFFFFF, bg #8C8C8C
 
 # Window Button Locations [1 Title 42]
 Mouse 1 4 A Iconify
@@ -99,8 +95,6 @@ Style * Colorset 1, HilightColorset 2, \
         BorderWidth 5, HandleWidth 5, \
         MWMBorder, DepressableBorder, \
         MWMButtons, UseDecor CDEDecor
-
-MenuStyle * MenuColorset 7, HilightBack, ActiveColorset 8
 
 # Root Menu
 DestroyMenu MenuFvwmRoot
