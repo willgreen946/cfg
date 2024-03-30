@@ -50,13 +50,29 @@ URxvt*VT100*geometry: 80x24
 !XTerm*VT100.initialFont: 64 
 !UXTerm*VT100.initialFont: 64
 
-! Dark Mode
+! Standard theme
 XTerm*background: #000000
 XTerm*foreground: #AAAAAA
-UXTerm*background: #000000
-UXTerm*foreground: #AAAAAA
-URxvt*background: #000000
-URxvt*foreground: #AAAAAA
+
+! Noctua theme
+!XTerm*background: #653024
+!XTerm*foreground: #E7CEB5
+
+! Standard theme
+!UXTerm*background: #000000
+!UXTerm*background: #AAAAAA
+
+! Noctua theme
+UXTerm*background: #653024
+UXTerm*foreground: #E7CEB5
+
+! Standard theme
+!URxvt*background: #000000
+!URxvt*foreground: #AAAAAA
+
+! Noctua theme
+URxvt*background: #E7CEB5
+URxvt*foreground: #653024
 
 ! Normal colors - Bright colors
 
@@ -128,5 +144,7 @@ URxvt*depth: 32
 
 xclock*foreground: #653024
 xclock*background: #E7CEB5
+xclock*face: terminus:bold:size=12
 xconsole*foreground: #653024
 xconsole*background: #E7CEB5
+xconsole*faceName: terminus:bold:size=12
