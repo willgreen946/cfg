@@ -1,1 +1,1 @@
-
+Firefox requires the wayland package to be installed (even on X)
