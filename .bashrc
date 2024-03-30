@@ -11,7 +11,6 @@ set -o vi
 #wsconsctl keyboard.map+="keysym Caps_Lock = Escape"
 
 # Verbose commands
-alias ls="ls -lA"
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
