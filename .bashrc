@@ -1,26 +1,32 @@
+ROOT_CMD=doas
+WIRELESS_INTERFACE=iwn0
+EDITOR=vi
+PAGER=less
+BROWSER=links
+PS1="[`whoami`@`hostname`]% "
 set -o vi
-PS1="[`whoami`@`hostname`]$ "
+#set -o posix
+
+# Swap Escape and Caps_Lock on the TTY (OpenBSD)
+#wsconsctl keyboard.map+="keysym Caps_Lock = Escape"
 
 # Verbose commands
-alias ls="ls -A"
+alias ls="ls -lA"
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
 
-alias gettune="yt-dlp --extract-audio --audio-format wav $1"
-alias youtube="sh ~/scripts/ytfzf/ytfzf"
-alias cputemp="sysctl hw.sensors.cpu0.temp0"
-alias searchlinux="lynx https://linuxsheet.com"
-alias search="lynx https://duckduckgo.com"
+alias new_wallpaper="feh --randomize --bg-scale ~/Pictures/Wallpapers/"
 
-# I am experimenting with different terminal emulations
-export TERM=screen
-#export TERM=xterm
-#export TERM=vt100
-#export TERM=ms-vt100-color
-#export TERM=vt220
-#export TERM=crt-vt220
-#export TERM=vt340
-#export TERM=linux
-#export TERM=linux-vt
-#export TERM=linux-basic
+# Internet relating things
+alias net_home="$ROOT_CMD sh ~/Scripts/wifi/home.sh $WIRELESS_INTERFACE"
+alias net_list="$ROOT_CMD sh ~/Scripts/wifi/ssid.sh $WIRELESS_INTERFACE"
+alias net_eduroam="$ROOT_CMD sh ~/Scripts/wifi/eduroam.sh $WIRELESS_INTERFACE"
+alias net_get_tune="yt-dlp --extract-audio --audio-format wav $1"
+alias net_search_youtube="sh ~/Scripts/ytfzf/ytfzf"
+alias net_search_linux="$BROWSER https://linuxsheet.com"
+alias net_search="$BROWSER https://duckduckgo.com"
+alias net_read="rdrview -B $BROWSER $1"
+
+# Linux
+#alias net_list="$root_cmd iw $wireless_interface scan | grep SSID"

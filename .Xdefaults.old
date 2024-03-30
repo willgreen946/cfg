@@ -126,7 +126,7 @@ URxvt*color15: #FFFFFF
 
 URxvt*depth: 32
 
-xclock*foreground: #653024
-xclock*background: #E7CEB5
-xconsole*foreground: #653024
-xconsole*background: #E7CEB5
+xclock*foreground: #000000
+xclock*background: #8C8C8C
+xconsole*foreground: #000000
+xconsole*background: #8C8C8C

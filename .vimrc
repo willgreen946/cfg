@@ -33,9 +33,11 @@ nnoremap <C-h> :set nonumber <CR>
 " escape from terminal hell
 tnoremap <C-t> <C-\\><C-n>
 
-" something to do with C#, I forgot to be honest
-" filetype indent plugin on
-
 " stop netrw being fucking huge
 let g:netrw_winsize=20
 let g:netrw_banner=0
+
+filetype indent off
+set nobackup
+set nowritebackup
+set noswapfile
