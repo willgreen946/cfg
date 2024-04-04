@@ -58,47 +58,47 @@ Mouse 3	TSIF	A	RaiseLower
 #   4 - Active Windows Borders
 #   7 - Menu
 #   8 - Menu
-#Colorset 1 fg #F0F0F0, bg #8C8C8C
-#Colorset 2 fg #FFFFFF, bg #AB2B28
-#Colorset 3 fg #F0F0F0, bg #8C8C8C
-#Colorset 4 fg #FFFFFF, bg #8C8C8C
-
-Colorset 1 fg #E7CEB5, bg #653024
-Colorset 2 fg #E7CEB5, bg #653024
-Colorset 3 fg #E7CEB5, bg #E7CEB5
-Colorset 4 fg #653024, bg #653024
-Colorset 7 fg #653024, bg #E7CEB5
-Colorset 8 fg #E7CEB5, bg #653024
+Colorset 1 fg #F0F0F0, bg #8C8C8C
+Colorset 2 fg #FFFFFF, bg #0000C0
+Colorset 3 fg #F0F0F0, bg #8C8C8C
+Colorset 4 fg #FFFFFF, bg #0000C0
+Colorset 7 fg #0000C0, bg #FFFFFF
+Colorset 8 fg #FFFFFF, bg #0000C0
 
 # Window Button Locations [1 Title 42]
-Mouse 1 4 A Iconify
-Mouse 1 2 A Maximize
 Mouse 1 1 A Menu MenuWindowOpsLong
+Mouse 1 6 A Iconify
+Mouse 1 4 A Maximize
+Mouse 1 2 A Destroy 
 
 AddToDecor CDEDecor
-+ TitleStyle    AllInactive -- Raised
-+ TitleStyle    AllActive -- Raised
-+ ButtonStyle   All Simple -- UseTitleStyle
-+ BorderStyle   Simple
-+ TitleStyle    Centered -- Raised
-+ ButtonStyle   All -- Raised
++ TitleStyle    AllInactive -- Flat 
++ TitleStyle    AllActive -- Flat 
++ ButtonStyle   All Simple -- UseTitleStyle 
++ BorderStyle   Simple  -- Flat
++ TitleStyle    LeftJustified -- Flat
++ ButtonStyle   All -- Flat 
 
-+ AddButtonStyle 1 Vector 3 23x58@0 77x58@0 77x42@0
-+ AddButtonStyle 1 Vector 3 23x58@1 23x42@1 77x42@1
++ AddButtonStyle 1 Vector 5 40x40@1 60x40@1 60x60@0 40x60@0 40x40@1
+#+ AddButtonStyle 1 Vector 5 25x25@1 25x75@1 75x75@0 75x25@0 25x25@1
 
-+ AddButtonStyle 2 Vector 3 21x79@0 79x79@0 79x21@0
-+ AddButtonStyle 2 Vector 3 21x79@1 21x21@1 79x21@1
+# Middle button
++ AddButtonStyle 4 Vector 13 60x20@0 60x40@0 80x40@1 80x60@0 60x60@0 60x80@0 40x80@0 40x60@1 20x60@0 20x40@1 40x40@1 40x20@1 60x20@1 – Flat
 
-+ AddButtonStyle 4 Vector 3 42x58@0 58x58@0 58x42@0
-+ AddButtonStyle 4 Vector 3 42x58@1 42x42@1 58x42@1
+# End button (x)
++ AddButtonStyle 2 Vector 17 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x70@1 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
+
+# - button
++ AddButtonStyle 6 Vector 3 23x58@0 77x58@0 77x42@0
++ AddButtonStyle 6 Vector 3 23x58@1 23x42@1 77x42@1
 
 + TitleStyle Height MinHeight 20
 
 Style * Colorset 1, HilightColorset 2, \
         BorderColorset 3, HilightBorderColorset 4, \
-        BorderWidth 5, HandleWidth 5, \
-        MWMBorder, DepressableBorder, \
-        MWMButtons, UseDecor CDEDecor
+        BorderWidth 5, HandleWidth 2, \
+        MwmBorder, FirmBorder, \
+        MwmButtons, UseDecor CDEDecor
 
 MenuStyle * MenuColorset 7, HilightBack, ActiveColorset 8
 
@@ -145,8 +145,10 @@ AddToMenu MenuPrograms
 + "XTerm" Exec xterm
 + "Links" Exec links -g https://search.datura.network
 + "UXTerm" Exec uxterm
-+ "Firefox" Exec firefox-esr
++ "Firefox" Exec firefox
 + "XConsole" Exec xconsole
 + "Libreoffice" Exec libreoffice
 + "XClock (analog)" Exec xclock -chime -analog
 + "XClock (digital)" Exec xclock -chime -digital
+
+
