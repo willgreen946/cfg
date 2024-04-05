@@ -36,8 +36,8 @@ synclient TouchpadOff=1
 sh ~/Scripts/x11/dell_only.sh
 
 # Wallpaper
-#xsetroot -solid 'rgb:00/22/44'
-xsetroot -solid 'rgb:65/30/24'
+xsetroot -solid 'rgb:00/22/44'
+#xsetroot -solid 'rgb:65/30/24'
 #feh --bg-tile ~/Pictures/Wallpapers/Tiles/brown.png
 feh --bg-scale ~/Picures/tiger.jpg
 #feh --bg-scale ~/Pictures/tiger.jpg
