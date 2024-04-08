@@ -1,11 +1,13 @@
 DefaultFont "xft:terminus:bold:size=10:antialias=True"
 
 # Mouse actions for moving between desktops
-ClickTime 750
-EdgeThickness 1
-EdgeScroll 100 100
-EdgeResistance 250 10
-Style * EdgeMoveDelay 350, EdgeMoveResistance 350
+#ClickTime 750
+#EdgeThickness 1
+#EdgeScroll 100 100
+#EdgeResistance 250 10
+#Style * EdgeMoveDelay 350, EdgeMoveResistance 350
+# Only one desktop
+DeskTopSize 1x1
 Style xconsole* NoTitle
 Style xclock* NoTitle
 
@@ -148,6 +150,7 @@ AddToMenu MenuPrograms
 + "Firefox" Exec firefox
 + "XConsole" Exec xconsole
 + "Libreoffice" Exec libreoffice
++ "Temperatures" Exec xterm -e watch -n 2 sensors
 + "XClock (analog)" Exec xclock -chime -analog
 + "XClock (digital)" Exec xclock -chime -digital
 
