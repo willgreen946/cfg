@@ -1,0 +1,13 @@
+For some reason the SCSI driver is not loaded by default, to load it just run
+
+# modprobe sg
+
+and if that still does not work then try
+
+# modprobe sr_mod
+
+Now when we run
+
+# cdrecord -scanbus
+
+Things should show up, make sure to get the right drive when you burn a cd/dvd
