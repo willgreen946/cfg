@@ -9,9 +9,8 @@ set -o posix
 
 # Swap Escape and Caps_Lock on the TTY (OpenBSD)
 #wsconsctl keyboard.map+="keysym Caps_Lock = Escape"
-
+PS1="[`whoami`@`hostname -s`]% "
 # Verbose commands
-alias ls="ls -lA"
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
@@ -27,9 +26,6 @@ alias net_search_youtube="sh ~/Scripts/ytfzf/ytfzf"
 alias net_search_linux="$BROWSER https://linuxsheet.com"
 alias net_search="$BROWSER https://duckduckgo.com"
 alias net_read="rdrview -B $BROWSER $1"
-
-# Text editor
-alias vim="nvim"
 
 # Linux
 #alias net_list="$root_cmd iw $wireless_interface scan | grep SSID"
