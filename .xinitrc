@@ -33,7 +33,8 @@ xset +fp /usr/local/share/fonts/spleen
 # Disable trackpad
 synclient TouchpadOff=1
 
-sh ~/Scripts/x11/dell_only.sh
+#sh ~/Scripts/x11/dell_only.sh
+sh ~/Scripts/x11/dp-left_dvi-right.sh
 
 # Wallpaper
 xsetroot -solid 'rgb:00/22/44'

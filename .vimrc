@@ -5,6 +5,12 @@ set wrap
 set nonumber
 set tabstop=2
 
+" Stop vim making loads of hidden files
+set nobackup
+set nowritebackup
+set noswapfile
+set noundofile
+
 " Stop the annoying indentation in C source
 set nocindent
 set noautoindent
@@ -38,6 +44,3 @@ let g:netrw_winsize=20
 let g:netrw_banner=0
 
 filetype indent off
-set nobackup
-set nowritebackup
-set noswapfile
