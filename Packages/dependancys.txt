@@ -1,1 +1,51 @@
+feh -
+\ imlib2
+\ Xlib (?)
 
+mupdf -
+\ jbig2dec
+\ gumbo-parser
+\ Xlib (?)
+
+mpv -
+\ libass
+\ libplacebo -
+	\ python3-glad 
+	\ python3-meson-opt - 
+		\ python3-build -
+			\ python3-pyproject-hooks -
+				\ python3-installer -
+					\ python3-flit_core
+		\ python3-wheel -
+			\ python3-installer -
+				\ python3-flit_core
+
+yt-dlp -
+\ python3-hatchling -
+	\ python3-pluggy
+	\ python3-editables -
+		\ python3-build -
+			\ python3-pyproject-hooks -
+				\ python3-installer -
+					\ python3-flit_core
+		\ python3-wheel -
+			\ python3-installer -
+				\ python3-flit_core
+	\ python3-pathspec -
+		\ python3-build -
+			\ python3-pyproject-hooks -
+				\ python3-installer -
+					\ python3-flit_core
+	\ python3-trove-classifiers -
+		\ python3-calver -
+			\ python3-build -
+				\ python3-pyproject-hooks -
+					\ python3-installer -
+						\ python3-flit_core
+			\ python3-wheel -
+				\ python3-installer -
+					\ python3-flit_core
+\ python3-build -
+	\ python3-pyproject-hooks -
+		\ python3-installer -
+			\ python3-flit_core
