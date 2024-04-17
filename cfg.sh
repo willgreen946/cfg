@@ -16,5 +16,5 @@ cp -v .bashrc ~/
 cp -v .ctwmrc ~/
 cp -v .lynxrc ~/
 cp -v .xinitrc ~/
-cp -v.tmux.conf ~/
+cp -v .tmux.conf ~/
 cp -v .Xdefaults ~/
