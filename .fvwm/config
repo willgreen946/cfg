@@ -1,15 +1,39 @@
+# The font to use for everything
 DefaultFont "xft:terminus:bold:size=10:antialias=True"
 
-# Mouse actions for moving between desktops
-#ClickTime 750
-#EdgeThickness 1
-#EdgeScroll 100 100
-#EdgeResistance 250 10
-#Style * EdgeMoveDelay 350, EdgeMoveResistance 350
 # Only one desktop
 DeskTopSize 1x1
+
+# Remove title bars for some programs
 Style xconsole* NoTitle
 Style xclock* NoTitle
+
+# Decor
+#   1 - Inactive Windows 
+#   2 - Active Window
+#   3 - Inactive Windows Borders
+#   4 - Active Windows Borders
+#   7 - Menu
+#   8 - Menu
+Colorset 1 fg #F0F0F0, bg #8C8C8C
+Colorset 2 fg #FFFFFF, bg #0000C0
+Colorset 3 fg #F0F0F0, bg #8C8C8C
+Colorset 4 fg #FFFFFF, bg #0000C0
+Colorset 7 fg #0000C0, bg #FFFFFF
+Colorset 8 fg #FFFFFF, bg #0000C0
+
+# Key binds
+Key r A M Restart
+Key f A M Exec firefox
+Key t A M Exec xterm
+Key k A M Next (CurrentDesk, AcceptsFocus) SwitchFocus 
+Key j A M Prev (CurrentDesk, AcceptsFocus) SwitchFocus 
+
+# Mouse binds
+Mouse 1	F	A	Resize-or-Raise
+Mouse 1	TS	A	Move-or-Raise
+Mouse 1	I	A	Move-or-Iconify
+Mouse 3	TSIF	A	RaiseLower
 
 # Functions for basic functionality
 AddToFunc Resize-or-Raise	I Raise
@@ -39,33 +63,6 @@ AddToFunc TrueFullScreen
 + I TestRc (NoMatch) WindowStyle !Title, !Handles, !Borders, ResizeHintOverride, !Iconifiable, FixedPosition, FixedSize
 + I UpdateStyles
 + I ThisWindow (Maximized) Maximize
-
-# Key binds
-Key r A M Restart
-Key f A M Exec firefox
-Key t A M Exec xterm
-Key k A M Next (CurrentDesk, AcceptsFocus) SwitchFocus 
-Key j A M Prev (CurrentDesk, AcceptsFocus) SwitchFocus 
-
-# Mouse binds
-Mouse 1	F	A	Resize-or-Raise
-Mouse 1	TS	A	Move-or-Raise
-Mouse 1	I	A	Move-or-Iconify
-Mouse 3	TSIF	A	RaiseLower
-
-# Decor
-#   1 - Inactive Windows 
-#   2 - Active Window
-#   3 - Inactive Windows Borders
-#   4 - Active Windows Borders
-#   7 - Menu
-#   8 - Menu
-Colorset 1 fg #F0F0F0, bg #8C8C8C
-Colorset 2 fg #FFFFFF, bg #0000C0
-Colorset 3 fg #F0F0F0, bg #8C8C8C
-Colorset 4 fg #FFFFFF, bg #0000C0
-Colorset 7 fg #0000C0, bg #FFFFFF
-Colorset 8 fg #FFFFFF, bg #0000C0
 
 # Window Button Locations [1 Title 42]
 Mouse 1 1 A Menu MenuWindowOpsLong
@@ -111,10 +108,6 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "&Programs" Popup MenuPrograms
 + "&XTerm" Exec exec xterm
 + "" Nop
-+ "Fvwm&Console" Module FvwmConsole -terminal xterm
-+ "&Wallpapers" Popup BGMenu
-+ "M&an Pages" Popup MenuFvwmManPages
-+ "" Nop
 + "Re&fresh" Refresh
 + "&Restart" Restart
 + "&Quit" Module FvwmScript FvwmScript-ConfirmQuit
@@ -142,6 +135,7 @@ AddToMenu   MenuWindowOpsLong
 
 DestroyMenu MenuPrograms
 AddToMenu MenuPrograms
++ "MC" Exec xterm -e mc 
 + "VIFM" Exec xterm -e vifm 
 + "HTOP" Exec xterm -e htop
 + "XTerm" Exec xterm
@@ -154,4 +148,29 @@ AddToMenu MenuPrograms
 + "XClock (analog)" Exec xclock -chime -analog
 + "XClock (digital)" Exec xclock -chime -digital
 
+# FvwmButtons icon launcher:
+DestroyFunc Launcher
+AddToFunc Launcher
++ I DestroyModuleConfig $0Launch: *
+#+ I *$0Launch: Geometry 64x68
++ I *$0Launch: Geometry 64x68
++ I *$0Launch: Columns 1
++ I *$0Launch: Rows    4
++ I *$0Launch: Frame   0
++ I *$0Launch: (1x3+0+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
++ I *$0Launch: Pixmap none 
++ I *$0Launch: (1x1+0+3, Font 9x15, Fore #F0F0F0, Back #0000C0, \
+                Title $0, Action (Mouse 1) `Exec exec $2`)
++ I Style $0Launch HandleWidth 0, NoTitle
++ I Module FvwmButtons $3 $0Launch
++ I UpdateStyles
 
+# Examples:
+Launcher XTerm icons/xterm.png "xterm" "-g +25+25"
+Launcher Files icons/files.png "xterm -e vifm" "-g +25+125"
+Launcher INET   icons/internet.png "firefox-esr"   "-g +25+225"
+Launcher Office icons/office.png "libreoffice"   "-g +25+325"
+Launcher Calc icons/calc.png "xterm -e bc"   "-g +25+425"
+Launcher VIM icons/vim.png "xterm -e vim"   "-g +25+525"
+Launcher Audio icons/audio.png "xterm -e alsamixer"   "-g +125+25"
+Launcher Mail icons/mail.png "firefox-esr https://mail.com"   "-g +125+125"
