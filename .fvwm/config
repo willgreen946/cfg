@@ -68,7 +68,7 @@ AddToFunc TrueFullScreen
 Mouse 1 1 A Menu MenuWindowOpsLong
 Mouse 1 6 A Iconify
 Mouse 1 4 A Maximize
-Mouse 1 2 A Destroy 
+Mouse 1 2 A Close
 
 AddToDecor CDEDecor
 + TitleStyle    AllInactive -- Flat 
@@ -168,9 +168,9 @@ AddToFunc Launcher
 # Examples:
 Launcher XTerm icons/xterm.png "xterm" "-g +25+25"
 Launcher Files icons/files.png "xterm -e vifm" "-g +25+125"
-Launcher INET   icons/internet.png "firefox-esr"   "-g +25+225"
+Launcher INET   icons/internet.png "firefox"   "-g +25+225"
 Launcher Office icons/office.png "libreoffice"   "-g +25+325"
 Launcher Calc icons/calc.png "xterm -e bc"   "-g +25+425"
 Launcher VIM icons/vim.png "xterm -e vim"   "-g +25+525"
 Launcher Audio icons/audio.png "xterm -e alsamixer"   "-g +125+25"
-Launcher Mail icons/mail.png "firefox-esr https://mail.com"   "-g +125+125"
+Launcher Mail icons/mail.png "firefox https://mail.com"   "-g +125+125"
