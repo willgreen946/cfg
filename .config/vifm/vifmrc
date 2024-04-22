@@ -35,13 +35,13 @@ filextype *.exe bvi %f
 filextype *.dll bvi %f
 
 " Image extensions
-filextype *.png feh %f
-filextype *.jpg feh %f
-filextype *.svg feh %f
-filextype *.jpeg feh %f
+filextype *.png nsxiv %f
+filextype *.jpg nsxiv %f
+filextype *.svg nsxiv %f
+filextype *.jpeg nsxiv %f
 
 " Document extensions
-filextype *.pdf mupdf %f
+filextype *.pdf zathura %f
 filextype *.doc libreoffice %f
 filextype *.docx libreoffice %f
 filextype *.pptx libreoffice %f
