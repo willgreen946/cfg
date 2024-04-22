@@ -9,7 +9,7 @@ setxkbmap -layout gb
 sndioctl output.level=0.3
 
 # refresh rate
-xrandr -r 60
+#xrandr -r 60
 
 # ThinkPad middle click scroll
 xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
@@ -23,10 +23,10 @@ xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.6
 xsetroot -solid 'rgb:00/22/44'
 
 # wallpaper
-feh --bg-scale ~/Picures/Wallpapers/gnu0.jpg
+feh --bg-scale ~/Pictures/Wallpapers/debian2.png
 
 # startup programs
 xterm -e tmux &
 
 # window manager
-fvwm2
+fvwm
