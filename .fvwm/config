@@ -8,6 +8,9 @@ DeskTopSize 1x1
 Style xconsole* NoTitle
 Style xclock* NoTitle
 
+# Where to place iconified programs
+Style * IconBox 67 0 -0 -0, IconFill l b, IconGrid 1 1
+
 # Decor
 #   1 - Inactive Windows 
 #   2 - Active Window
@@ -158,7 +161,7 @@ AddToFunc Launcher
 + I *$0Launch: Frame   0
 + I *$0Launch: (1x3+0+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
 + I *$0Launch: Pixmap none 
-+ I *$0Launch: (1x1+0+3, Font 9x15, Fore #F0F0F0, Back #0000C0, \
++ I *$0Launch: (1x1+0+3, Font "xft:terminus:bold:size=10:antialias=True", Fore #F0F0F0, Back #0000C0, \
                 Title $0, Action (Mouse 1) `Exec exec $2`)
 + I Style $0Launch HandleWidth 0, NoTitle
 + I Module FvwmButtons $3 $0Launch
