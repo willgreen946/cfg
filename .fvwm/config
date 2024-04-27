@@ -18,12 +18,12 @@ Style * IconBox 67 0 -0 -0, IconFill l b, IconGrid 1 1
 #   4 - Active Windows Borders
 #   7 - Menu
 #   8 - Menu
-Colorset 1 fg #F0F0F0, bg #8C8C8C
-Colorset 2 fg #FFFFFF, bg #0000C0
-Colorset 3 fg #F0F0F0, bg #8C8C8C
-Colorset 4 fg #FFFFFF, bg #0000C0
-Colorset 7 fg #0000C0, bg #FFFFFF
-Colorset 8 fg #FFFFFF, bg #0000C0
+Colorset 1 fg #F0F0F0, bg #5A5A5A
+Colorset 2 fg #F0F0F0, bg #A00000
+Colorset 3 fg #F0F0F0, bg #5A5A5A
+Colorset 4 fg #F0F0F0, bg #A00000
+Colorset 7 fg #F0F0F0, bg #5A5A5A
+Colorset 8 fg #F0F0F0, bg #A00000
 
 # Key binds
 Key r A M Restart
@@ -161,7 +161,7 @@ AddToFunc Launcher
 + I *$0Launch: Frame   0
 + I *$0Launch: (1x3+0+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
 + I *$0Launch: Pixmap none 
-+ I *$0Launch: (1x1+0+3, Font "xft:terminus:bold:size=10:antialias=True", Fore #F0F0F0, Back #0000C0, \
++ I *$0Launch: (1x1+0+3, Font "xft:terminus:bold:size=10:antialias=True", Fore #F0F0F0, Back #0000A0, \
                 Title $0, Action (Mouse 1) `Exec exec $2`)
 + I Style $0Launch HandleWidth 0, NoTitle
 + I Module FvwmButtons $3 $0Launch
