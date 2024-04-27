@@ -15,3 +15,6 @@ alias wls="sudo iw dev wlp3s0 scan | grep SSID"
 
 # download music off the internet
 alias rip="yt-dlp --extract-audio --audio-format wav"
+
+# torrent a file quickly with sane defaults
+alias torrent="transmission-cli -w ./"
