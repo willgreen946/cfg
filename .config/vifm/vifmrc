@@ -1,32 +1,34 @@
 " Single panel
-only
+" only
+
+colorscheme matrix 
 
 " Default editor
-set vicmd=vi
+set vicmd=vim
 
 " Plain text extensions
 filextype *.txt vi %f
 
 " Code extensions
-filextype *.c nvim %f
-filextype *.S nvim %f
-filextype *.m nvim %f
-filextype *.h nvim %f
-filextype *.C nvim %f
-filextype *.pl nvim %f
-filextype *.ex nvim %f
-filextype *.sh nvim %f
-filextype *.cc nvim %f
-filextype *.cs nvim %f
-filextype *.hh nvim %f
-filextype *.rs nvim %f
-filextype *.c++ nvim %f
-filextype *.cxx nvim %f
-filextype *.cpp nvim %f
-filextype *.hpp nvim %f
-filextype *.vim nvim %f
-filextype *.lua nvim %f
-filextype *.asm nvim %f
+filextype *.c vim %f
+filextype *.S vim %f
+filextype *.m vim %f
+filextype *.h vim %f
+filextype *.C vim %f
+filextype *.pl vim %f
+filextype *.ex vim %f
+filextype *.sh vim %f
+filextype *.cc vim %f
+filextype *.cs vim %f
+filextype *.hh vim %f
+filextype *.rs vim %f
+filextype *.c++ vim %f
+filextype *.cxx vim %f
+filextype *.cpp vim %f
+filextype *.hpp vim %f
+filextype *.vim vim %f
+filextype *.lua vim %f
+filextype *.asm vim %f
 
 " Binary extensions
 filextype *.o bvi %f
