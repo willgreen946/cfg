@@ -27,7 +27,7 @@ Colorset 8 fg #F0F0F0, bg #A00000
 
 # Key binds
 Key r A M Restart
-Key f A M Exec firefox
+Key f A M Exec xterm -e vifm 
 Key t A M Exec xterm
 Key k A M Next (CurrentDesk, AcceptsFocus) SwitchFocus 
 Key j A M Prev (CurrentDesk, AcceptsFocus) SwitchFocus 
