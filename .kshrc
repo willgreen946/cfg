@@ -18,3 +18,6 @@ alias rip="yt-dlp --extract-audio --audio-format wav"
 
 # torrent a file quickly with sane defaults
 alias torrent="transmission-cli -w ./"
+
+# open my todo list
+alias todo="vim ~/Documents/todo.txt"
