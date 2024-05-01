@@ -1,5 +1,6 @@
 # The font to use for everything
-DefaultFont "xft:terminus:bold:size=10:antialias=True"
+#DefaultFont "xft:terminus:bold:size=10:antialias=True"
+DefaultFont "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r"
 
 # Only one desktop
 DeskTopSize 1x1
@@ -161,7 +162,9 @@ AddToFunc Launcher
 + I *$0Launch: Frame   0
 + I *$0Launch: (1x3+0+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
 + I *$0Launch: Pixmap none 
-+ I *$0Launch: (1x1+0+3, Font "xft:terminus:bold:size=10:antialias=True", Fore #F0F0F0, Back #0000A0, \
+#+ I *$0Launch: (1x1+0+3, Font "xft:terminus:bold:size=10:antialias=True", Fore #F0F0F0, Back #0000A0, \
+#                Title $0, Action (Mouse 1) `Exec exec $2`)
++ I *$0Launch: (1x1+0+3, Font  "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r", Fore #F0F0F0, Back #0000A0, \
                 Title $0, Action (Mouse 1) `Exec exec $2`)
 + I Style $0Launch HandleWidth 0, NoTitle
 + I Module FvwmButtons $3 $0Launch
@@ -179,3 +182,4 @@ Launcher HTOP icons/cpu.png "xterm -e htop"   "-g +125+125"
 Launcher Mail icons/mail.png "firefox https://mail.com"   "-g +125+225"
 Launcher XClock icons/clock.png "xclock"   "-g +125+325"
 Launcher TODO icons/printer.png "xterm -e \"cat ~/Documents/todo.txt | less\"" "-g +125+425"
+Launcher Emacs icons/emacs.png "emacs" "-g +125+525"
