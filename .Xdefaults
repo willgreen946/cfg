@@ -1,23 +1,24 @@
 ! use a login shell
-XTerm*loginShell:true
+xterm*loginShell:true
 
 ! cursor blink
-XTerm*cursorBlink:true
+xterm*cursorBlink:true
 
 ! no scrollbar
-XTerm*scrollBar:false
+xterm*scrollBar:false
 
 ! xsel
-XTerm*selectToClipboard:true
+xterm*selectToClipboard:true
 
 ! fonts
-XTerm*faceName:terminus:bold:pixelsize=24:antialias=true
+!xterm*faceName:terminus:bold:pixelsize=24:antialias=true
+xterm*font:-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r
 xclock*faceName:terminus:bold:pixelsize=24:antialias=true
 xconsole*faceName:terminus:bold:pixelsize=24:antialias=true
 
 ! colors
-XTerm*background:#000000
-XTerm*foreground:#AAAAAA
+xterm*background:#000000
+xterm*foreground:#AAAAAA
 xclock*foreground:#000000
 xclock*background:#AAAAAA
 xconsole*foreground:#000000
