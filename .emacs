@@ -3,61 +3,63 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(ef-themes spacemacs-theme evil)))
-
+ '(package-selected-packages '(evil))
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "fixed" :foundry "misc" :slant normal :weight medium :height 113 :width normal)))))
 
-;; Packages
-(setq package-list
-			'(ef-themes evil spacemacs-theme))
 
-;; ansi-term on startup
-(add-hook 'emacs-startup-hook
-					(lambda ()
-						(kill-buffer "*scratch*")
-						(ansi-term "/bin/bash")
-						))
+;; Set default font
+(set-face-attribute
+ 'default (selected-frame) :font
+ "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r")
 
-;; Disable startup splash
-(setq inhibit-splash-screen t)
+;; Set up package.el to work with MELPA
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(package-refresh-contents)
 
-;; Stop making auto save file
-(setq auto-save-default nil)
+;; Download Evil
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
 
-;; Stop making backups
-(setq make-backup-files nil)
-
-;; VI keys 
+;; Enable Evil
 (require 'evil)
 (evil-mode 1)
 
-;; Disable bars
-(menu-bar-mode -1)
+;; Emacs to save files in this directory
+(setq backup-directory-alist `(("." . "~/.saves")))
+
+;; Set the width of tab stops
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq indent-line-function 'insert-tab)
+
+;; Disable scroll bar
 (scroll-bar-mode -1)
+
+;; Disable tool bar
 (tool-bar-mode -1)
 
-;; Two tab indentation
-(setq-default tab-width 2)
-
-;; Add a tab bar
-(tab-bar-mode)
-
-;; Fonts
-(add-to-list 'default-frame-alist
-						 '(font . "spleen-16"))
-
-;; Jazz Theme
-;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-;;(load-theme 'jazz t)
-
-;; EF-bio theme
-(ef-themes-select-dark 'ef-bio)
+;; Disable menu bar
+(menu-bar-mode 1)
 
 ;; Default C indentation style
 (setq c-default-style "bsd"
-      c-basic-offset 2)
+  c-basic-offset 2)
+
+;; Disable startup splash screen
+(setq inhibit-splash-screen t)
+
+;; Dired at startup
+(add-hook 'emacs-startup-hook
+  (lambda ()
+  (kill-buffer "*scratch*")
+  (dired "~/")
+  ))
