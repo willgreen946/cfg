@@ -28,6 +28,7 @@ feh --bg-scale ~/Pictures/Wallpapers/debian2.png
 # startup programs
 xterm -e tmux &
 xterm -e "cat ~/Documents/todo.txt | less" &
+emacs &
 
 # window manager
 fvwm
