@@ -42,3 +42,9 @@
   
 ;; Disable scroll bar
 (scroll-bar-mode -1)
+
+;; Startup hook
+(add-hook 'emacs-startup-hook (lambda ()
+                                (when (get-buffer "*scratch*")
+                                  (kill-buffer "*scratch*"))))
+(put 'dired-find-alternate-file 'disabled nil)
