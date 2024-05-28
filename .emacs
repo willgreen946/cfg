@@ -9,30 +9,25 @@
 (unless (package-installed-p 'evil)
   (package-install 'evil))
 
+;; Enable Evil
+(require 'evil)
+(evil-mode 1)
+
 ;; Download Gruvbox color scheme 
 (unless (package-installed-p 'gruvbox-theme)
   (package-install 'gruvbox-themes))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(gruvbox-light-hard))
- '(custom-safe-themes
-   '("a5270d86fac30303c5910be7403467662d7601b821af2ff0c4eb181153ebfc0a" "046a2b81d13afddae309930ef85d458c4f5d278a69448e5a5261a5c78598e012" "d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d" default))
- '(package-selected-packages '(gruvbox-themes gruvbox-theme evil))
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Liberation Mono" :foundry "1ASC" :slant normal :weight regular :height 113 :width normal)))))
+;; Download nerd icons
+(unless (package-installed-p 'nerd-icons)
+  (package-install 'nerd-icons))
 
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
+;; Download doom-modeline
+(unless (package-installed-p 'doom-modeline)
+  (package-install 'doom-modeline))
+
+;; Enable doom-modeline
+(require 'doom-modeline)
+(doom-modeline-mode 1)
 
 ;; Set width of tabs
 (setq-default indent-tabs-mode nil)
@@ -63,3 +58,21 @@
 
 ;; So that we can use the a key to follow directorys
 (put 'dired-find-alternate-file 'disabled nil)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(gruvbox-light-hard))
+ '(custom-safe-themes
+   '("b5fd9c7429d52190235f2383e47d340d7ff769f141cd8f9e7a4629a81abc6b19" "014cb63097fc7dbda3edf53eb09802237961cbb4c9e9abd705f23b86511b0a69" "a5270d86fac30303c5910be7403467662d7601b821af2ff0c4eb181153ebfc0a" "046a2b81d13afddae309930ef85d458c4f5d278a69448e5a5261a5c78598e012" "d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d" default))
+ '(package-selected-packages '(doom-modeline gruvbox-themes gruvbox-theme evil))
+ '(tab-bar-mode t)
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "JetBrainsMono Nerd Font Mono" :foundry "JB" :slant normal :weight regular :height 113 :width normal)))))
