@@ -21,6 +21,12 @@
 (unless (package-installed-p 'nerd-icons)
   (package-install 'nerd-icons))
 
+;; Download treemacs-icons-dired 
+(unless (package-installed-p 'treemacs-icons-dired)
+  (package-install 'treemacs-icons-dired))
+
+(add-hook 'dired-mode-hook 'treemacs-icons-dired-mode)
+
 ;; Download doom-modeline
 (unless (package-installed-p 'doom-modeline)
   (package-install 'doom-modeline))
@@ -67,7 +73,8 @@
  '(custom-enabled-themes '(gruvbox-light-hard))
  '(custom-safe-themes
    '("b5fd9c7429d52190235f2383e47d340d7ff769f141cd8f9e7a4629a81abc6b19" "014cb63097fc7dbda3edf53eb09802237961cbb4c9e9abd705f23b86511b0a69" "a5270d86fac30303c5910be7403467662d7601b821af2ff0c4eb181153ebfc0a" "046a2b81d13afddae309930ef85d458c4f5d278a69448e5a5261a5c78598e012" "d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d" default))
- '(package-selected-packages '(doom-modeline gruvbox-themes gruvbox-theme evil))
+ '(package-selected-packages
+   '(treemacs-icons-dired spaceline doom-modeline gruvbox-themes gruvbox-theme evil))
  '(tab-bar-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
