@@ -19,12 +19,12 @@ Style * IconBox 67 0 -0 -0, IconFill l b, IconGrid 1 1
 #   4 - Active Windows Borders
 #   7 - Menu
 #   8 - Menu
-Colorset 1 fg #F0F0F0, bg #5A5A5A
-Colorset 2 fg #F0F0F0, bg #A00000
-Colorset 3 fg #F0F0F0, bg #5A5A5A
-Colorset 4 fg #F0F0F0, bg #A00000
-Colorset 7 fg #F0F0F0, bg #5A5A5A
-Colorset 8 fg #F0F0F0, bg #A00000
+Colorset 1 fg #E7CEB5, bg #653024
+Colorset 2 fg #E7CEB5, bg #653024
+Colorset 3 fg #E7CEB5, bg #653024
+Colorset 4 fg #E7CEB5, bg #E7CEB5
+Colorset 7 fg #653024, bg #E7CEB5
+Colorset 8 fg #E7CEB5, bg #653024
 
 # Key binds
 Key r A M Restart
@@ -148,6 +148,7 @@ AddToMenu MenuPrograms
 + "XConsole" Exec xconsole
 + "Libreoffice" Exec libreoffice
 + "Temperatures" Exec xterm -e watch -n 2 sensors
++ "Envstat" Exec xterm -e envstat -i 2 
 + "XClock (analog)" Exec xclock -chime -analog
 + "XClock (digital)" Exec xclock -chime -digital
 
@@ -173,14 +174,14 @@ AddToFunc Launcher
 + I UpdateStyles
 
 # Examples:
-Launcher XTerm icons/xterm.png "xterm" "-g +25+25"
-Launcher Files icons/files.png "xterm -e vifm" "-g +25+125"
-Launcher INET   icons/internet.png "firefox"   "-g +25+225"
-Launcher Office icons/office.png "libreoffice"   "-g +25+325"
-Launcher Calc icons/calc.png "xterm -e bc"   "-g +25+425"
-Launcher VIM icons/vim.png "xterm -e vim"   "-g +25+525"
-Launcher Alsa icons/audio.png "xterm -e alsamixer"   "-g +125+25"
-Launcher HTOP icons/cpu.png "xterm -e htop"   "-g +125+125"
-Launcher Mail icons/mail.png "firefox https://mail.com"   "-g +125+225"
-Launcher XClock icons/clock.png "xclock"   "-g +125+325"
-Launcher TODO icons/printer.png "xterm -e \"cat ~/Documents/todo.txt | less\"" "-g +125+425"
+#Launcher XTerm icons/xterm.png "xterm" "-g +25+25"
+#Launcher Files icons/files.png "xterm -e vifm" "-g +25+125"
+#Launcher INET   icons/internet.png "firefox"   "-g +25+225"
+#Launcher Office icons/office.png "libreoffice"   "-g +25+325"
+#Launcher Calc icons/calc.png "xterm -e bc"   "-g +25+425"
+#Launcher VIM icons/vim.png "xterm -e vim"   "-g +25+525"
+#Launcher Alsa icons/audio.png "xterm -e alsamixer"   "-g +125+25"
+#Launcher HTOP icons/cpu.png "xterm -e htop"   "-g +125+125"
+#Launcher Mail icons/mail.png "firefox https://mail.com"   "-g +125+225"
+#Launcher XClock icons/clock.png "xclock"   "-g +125+325"
+#Launcher TODO icons/printer.png "xterm -e \"cat ~/Documents/todo.txt | less\"" "-g +125+425"
