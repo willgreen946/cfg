@@ -1,7 +1,7 @@
 # The font to use for everything
 #DefaultFont "xft:terminus:bold:size=10:antialias=True"
-DefaultFont "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r"
-
+#DefaultFont "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r"
+DefaultFont "-misc-spleen-medium-r-normal--16-160-72-72-c-80-iso10646-1"
 # Only one desktop
 DeskTopSize 1x1
 
@@ -164,8 +164,10 @@ AddToFunc Launcher
 + I *$0Launch: Pixmap none 
 #+ I *$0Launch: (1x1+0+3, Font "xft:terminus:bold:size=10:antialias=True", Fore #F0F0F0, Back #0000A0, \
 #                Title $0, Action (Mouse 1) `Exec exec $2`)
-+ I *$0Launch: (1x1+0+3, Font  "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r", Fore #F0F0F0, Back #0000A0, \
++ I *$0Launch: (1x1+0+3, Font  "-misc-spleen-medium-r-normal--16-160-72-72-c-80-iso10646-1", Fore #F0F0F0, Back #0000A0, \
                 Title $0, Action (Mouse 1) `Exec exec $2`)
+#+ I *$0Launch: (1x1+0+3, Font  "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r", Fore #F0F0F0, Back #0000A0, \
+#                Title $0, Action (Mouse 1) `Exec exec $2`)
 + I Style $0Launch HandleWidth 0, NoTitle
 + I Module FvwmButtons $3 $0Launch
 + I UpdateStyles
