@@ -12,7 +12,9 @@ xterm*selectToClipboard:true
 
 ! fonts
 !xterm*faceName:terminus:bold:pixelsize=24:antialias=true
-xterm*font:-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r
+!xterm*font:-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r
+!xterm*font:-misc-spleen-medium-r-normal--16-160-72-72-c-80-iso10646-1
+xterm*font:-misc-spleen-medium-r-normal--24-240-72-72-c-120-iso10646-1
 xclock*faceName:terminus:bold:pixelsize=24:antialias=true
 xconsole*faceName:terminus:bold:pixelsize=24:antialias=true
 
@@ -23,3 +25,6 @@ xclock*foreground:#000000
 xclock*background:#AAAAAA
 xconsole*foreground:#000000
 xconsole*background:#AAAAAA
+
+! disable bold fonts in xterm
+XTerm*allowBoldFonts: false

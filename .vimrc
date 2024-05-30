@@ -1,9 +1,13 @@
 syntax on
-colorscheme default
+colorscheme retrobox 
+set background=dark
 
 set wrap
 set nonumber
 set tabstop=2
+
+" airline theme
+let g:airline_theme='gruvbox'
 
 " Stop vim making loads of hidden files
 set nobackup
@@ -20,7 +24,7 @@ set nosmartindent
 set laststatus=0
 
 " Only use 16 colors
-set t_Co=16
+set t_Co=256
 
 " 80 column guide line
 set colorcolumn=80
