@@ -53,8 +53,8 @@ Style audacious IconOverride, Icon audio-headphones.png
 
 # == Fonts ==
 WindowFont "Shadow=1:xft:DejaVu Serif:Bold:size=12"
-IconFont "xft:fixed::size=9"
-MenuStyle * Font "xft:fixed::size=11"
+IconFont "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r"
+MenuStyle * Font "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r"
 
 # == Menu style: fast popups, filled submenu triangles ==
 MenuStyle * PopupImmediately, PopdownImmediately, PopupOffset 0 100
