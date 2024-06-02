@@ -11,4 +11,8 @@ alias rm="rm -v"
 # download music off the internet
 alias rip="yt-dlp --extract-audio --audio-format wav"
 
+# open my todo list
 alias todo="vim ~/Documents/todo.txt"
+
+# suspend the system to memory
+alias zzz="doas sh ~/Scripts/netbsd/zzz.sh"

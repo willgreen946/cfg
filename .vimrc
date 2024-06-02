@@ -1,13 +1,10 @@
 syntax on
-colorscheme retrobox 
+colorscheme default
 set background=dark
 
 set wrap
 set nonumber
 set tabstop=2
-
-" airline theme
-let g:airline_theme='gruvbox'
 
 " Stop vim making loads of hidden files
 set nobackup
