@@ -1,187 +1,282 @@
-# The font to use for everything
-#DefaultFont "xft:terminus:bold:size=10:antialias=True"
-#DefaultFont "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r"
-DefaultFont "-misc-spleen-medium-r-normal--16-160-72-72-c-80-iso10646-1"
-# Only one desktop
-DeskTopSize 1x1
+# == FVWM 2 'Vivid' config ==
+# (L) Carl Svensson, https://datagubbe.se/fvwm
 
-# Remove title bars for some programs
-Style xconsole* NoTitle
-Style xclock* NoTitle
+# == Set ImagePath ==
+ImagePath $HOME/.fvwm/icons:+
 
-# Where to place iconified programs
-Style * IconBox 67 0 -0 -0, IconFill l b, IconGrid 1 1
+# == Set up the pager ==
+# 2x3 desktops, no edgescroll, no labels.
+DeskTopSize 2 3
+EdgeScroll 0 0
+*FvwmPagerBack SlateBlue
+*FvwmPagerFore black
+*FvwmPagerHilight Orchid
+*FvwmPagerFont none
+*FvwmPagerFont none
+*FvwmPagerGeometry -2+2
+*FvwmPagerLabel FvwmPager
+*FvwmPager: WindowLabelFormat ""
+*FvwmPager: SolidSeparators
 
-# Decor
-#   1 - Inactive Windows 
-#   2 - Active Window
-#   3 - Inactive Windows Borders
-#   4 - Active Windows Borders
-#   7 - Menu
-#   8 - Menu
-Colorset 1 fg #E7CEB5, bg #653024
-Colorset 2 fg #E7CEB5, bg #653024
-Colorset 3 fg #E7CEB5, bg #653024
-Colorset 4 fg #E7CEB5, bg #E7CEB5
-Colorset 7 fg #653024, bg #E7CEB5
-Colorset 8 fg #E7CEB5, bg #653024
+# == Set up an iconbox ==
+# This will create an iconbox containing one row of icons
+# from top to bottom along the left hand side of the screen.
+# IconBox geometry order: left top right bottom
+Style "*" IconBox 4 4 90 -0, IconGrid 1 1, IconFill Left Top
+Style * IconBackgroundColorset 17
+Style * IconSize 90 70 -1 -1
+Style * IconBackgroundRelief 2
+Style * IconBackgroundPadding 2
 
-# Key binds
-Key r A M Restart
-Key f A M Exec firefox
-Key t A M Exec xterm
-Key k A M Next (CurrentDesk, AcceptsFocus) SwitchFocus 
-Key j A M Prev (CurrentDesk, AcceptsFocus) SwitchFocus 
+# == Window and icon colors ==
+# Menu colors are set in menu style below.
 
-# Mouse binds
-Mouse 1	F	A	Resize-or-Raise
-Mouse 1	TS	A	Move-or-Raise
-Mouse 1	I	A	Move-or-Iconify
-Mouse 3	TSIF	A	RaiseLower
+# Active Windows
+ColorSet 16 fg white, bg #C06077, fgsh #600011
+Style * HilightColorSet 16
 
-# Functions for basic functionality
-AddToFunc Resize-or-Raise	I Raise
-+				M Resize
-+				D Lower
+# Inactive Windows
+# Also Colorset for icons, matches inactive windows
+Colorset 17 fg black, bg #60A0C0, fgsh #81C1D1
+Style * Colorset 17
 
-AddToFunc Move-or-Raise		I Raise
-+				M Move
-+  			D Lower
+# == Icon styles and overrides ==
+Style "*" Icon xlogo.png
+Style rxvt Icon winterm2.png
+Style xterm IconOverride, Icon winterm2.png
+Style Firefox IconOverride, Icon firefox.png
+Style "Psensor*" IconOverride, Icon sysmon.png
+Style Sylpheed IconOverride, Icon sylpheed.png
+Style leafpad IconOverride, Icon text-editor.png
+Style xcalc IconOverride, Icon calc.png
+Style audacious IconOverride, Icon audio-headphones.png
 
-AddToFunc Move-or-Iconify	I Raise
-+				M Move
-+				D Iconify
+# == Fonts ==
+WindowFont "Shadow=1:xft:DejaVu Serif:Bold:size=12"
+IconFont "xft:fixed::size=9"
+MenuStyle * Font "xft:fixed::size=11"
 
-# Switches focus with h j k l
-DestroyFunc SwitchFocus
-AddToFunc SwitchFocus
-+ I Iconify off
-+ I FlipFocus
-+ I Raise
-+ I WarpToWindow !raise 5 5
+# == Menu style: fast popups, filled submenu triangles ==
+MenuStyle * PopupImmediately, PopdownImmediately, PopupOffset 0 100
+MenuStyle * VerticalItemSpacing 3 3, VerticalTitleSpacing 3 3
+MenuStyle * HilightBack DarkSlateBlue, ActiveFore White
+MenuStyle * TrianglesUseFore, TrianglesSolid
 
-# Makes a window fullscreen with no borders
-DestroyFunc TrueFullScreen 
-AddToFunc TrueFullScreen 
-+ I ThisWindow (Maximized) DestroyWindowStyle
-+ I TestRc (NoMatch) WindowStyle !Title, !Handles, !Borders, ResizeHintOverride, !Iconifiable, FixedPosition, FixedSize
-+ I UpdateStyles
-+ I ThisWindow (Maximized) Maximize
+# == Various styles ==
+# Force height of title bars
+TitleStyle Height 25
 
-# Window Button Locations [1 Title 42]
-Mouse 1 1 A Menu MenuWindowOpsLong
-Mouse 1 6 A Iconify
-Mouse 1 4 A Maximize
-Mouse 1 2 A Close
+# Decorate transient windows. A must for GTK apps' sub-windows.
+Style * DecorateTransient
 
-AddToDecor CDEDecor
-+ TitleStyle    AllInactive -- Flat 
-+ TitleStyle    AllActive -- Flat 
-+ ButtonStyle   All Simple -- UseTitleStyle 
-+ BorderStyle   Simple  -- Flat
-+ TitleStyle    LeftJustified -- Flat
-+ ButtonStyle   All -- Flat 
+# Focus follows mouse
+Style "*" SloppyFocus
 
-+ AddButtonStyle 1 Vector 5 40x40@1 60x40@1 60x60@0 40x60@0 40x40@1
-#+ AddButtonStyle 1 Vector 5 25x25@1 25x75@1 75x75@0 75x25@0 25x25@1
+# Snap windows to other windows _and_ screen edges
+Style * SnapAttraction 10 Screen
 
-# Middle button
-+ AddButtonStyle 4 Vector 13 60x20@0 60x40@0 80x40@1 80x60@0 60x60@0 60x80@0 40x80@0 40x60@1 20x60@0 20x40@1 40x40@1 40x20@1 60x20@1 – Flat
+# 250ms = Click
+ClickTime 250
 
-# End button (x)
-+ AddButtonStyle 2 Vector 17 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x70@1 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
+# Enable solid window moving for all window sizes
+OpaqueMoveSize -1
 
-# - button
-+ AddButtonStyle 6 Vector 3 23x58@0 77x58@0 77x42@0
-+ AddButtonStyle 6 Vector 3 23x58@1 23x42@1 77x42@1
+# Emulate Motif Window Manager hints
+Emulate Mwm
 
-+ TitleStyle Height MinHeight 20
+# Window Placement
+Style "*" DumbPlacement
 
-Style * Colorset 1, HilightColorset 2, \
-        BorderColorset 3, HilightBorderColorset 4, \
-        BorderWidth 5, HandleWidth 2, \
-        MwmBorder, FirmBorder, \
-        MwmButtons, UseDecor CDEDecor
+# == Window decors and overrides ==
+Style *            Title, Handles, !MWMFunctions, NoDecorHint, StickyIcon
+Style *            DepressableBorder 
+Style "FvwmPager"  NoTitle, Sticky, WindowListSkip, NoHandles, BorderWidth 7
+Style "xload"      NoTitle, Sticky, WindowListSkip, NoHandles, BorderWidth 7
+Style "xclock"     NoTitle, Sticky, WindowListSkip, NoHandles, BorderWidth 7
+Style gkrellm      NoTitle, Sticky, NoHandles, BorderWidth 7, NeverFocus
+Style Cell         NoTitle, NoHandles, BorderWidth 0, FPLenient
+Style "VIC-II"     NoTitle, NoHandles, BorderWidth 0, FPLenient
+Style feh          NoTitle
 
-MenuStyle * MenuColorset 7, HilightBack, ActiveColorset 8
+# == Mouse bindings ==
+# This will create window buttons and set their listeners
+#  - Leftmost widget: Show menu on single click, close on double click
+Mouse 0     1       A       Menu Window-Ops2 Close
+#  - Rightmost widget: Maximize the window height
+Mouse 0     2       A       Maximize 0 100
+#  - Second widget from the right: Iconify the window
+Mouse 0     4       A       Iconify
 
-# Root Menu
-DestroyMenu MenuFvwmRoot
-AddToMenu   MenuFvwmRoot "Fvwm" Title
-+ "&Windows" Popup MenuWindowOpsLong 
-+ "&Programs" Popup MenuPrograms
-+ "&XTerm" Exec exec xterm
-+ "" Nop
-+ "Re&fresh" Refresh
-+ "&Restart" Restart
-+ "&Quit" Module FvwmScript FvwmScript-ConfirmQuit
+# Listeners for root window (the "desktop")
+Mouse 1     R       A       Menu RootMenu
+Mouse 3     R       A       Menu Window-Ops Nop
+Mouse 2     R       A       WindowList
 
-DestroyMenu MenuWindowOpsLong
-AddToMenu   MenuWindowOpsLong
-+ "Move"                Move
-+ "Resize"              Resize
-+ "(De)Iconify"         Iconify
-+ "(Un)Maximize"        Maximize
-+ "(Un)Shade"           WindowShade
-+ "(Un)Sticky"          Stick
-+ "" Nop
-+ "Close"               Close
-+ "Destroy"             Destroy
-+ "" Nop
-+ "Raise"               Raise
-+ "Lower"               Lower
-+ "" Nop
-+ "StaysOnTop"          Pick (CirculateHit) Layer 0 6
-+ "StaysPut"            Pick (CirculateHit) Layer 0 4
-+ "StaysOnBottom"       Pick (CirculateHit) Layer 0 2
-+ "" Nop
-+ "Identify"            Module FvwmIdent
+# Raise or lower any window when right clicked anywhere in the border
+Mouse 3     TSIF    A       RaiseLower
 
-DestroyMenu MenuPrograms
-AddToMenu MenuPrograms
-+ "VIFM" Exec xterm -e vifm 
-+ "HTOP" Exec xterm -e htop
-+ "XTerm" Exec xterm
-+ "Links" Exec links -g https://search.datura.network
-+ "UXTerm" Exec uxterm
-+ "Firefox" Exec firefox
-+ "XConsole" Exec xconsole
-+ "Libreoffice" Exec libreoffice
-+ "Temperatures" Exec xterm -e watch -n 2 sensors
-+ "Envstat" Exec xterm -e envstat -i 2 
-+ "XClock (analog)" Exec xclock -chime -analog
-+ "XClock (digital)" Exec xclock -chime -digital
+# When clicking an icon, de-iconfy it and tile remaining icons
+Mouse 0     I       A       TileIcons
 
-# FvwmButtons icon launcher:
-DestroyFunc Launcher
-AddToFunc Launcher
-+ I DestroyModuleConfig $0Launch: *
-#+ I *$0Launch: Geometry 64x68
-+ I *$0Launch: Geometry 64x68
-+ I *$0Launch: Columns 1
-+ I *$0Launch: Rows    4
-+ I *$0Launch: Frame   0
-+ I *$0Launch: (1x3+0+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
-+ I *$0Launch: Pixmap none 
-#+ I *$0Launch: (1x1+0+3, Font "xft:terminus:bold:size=10:antialias=True", Fore #F0F0F0, Back #0000A0, \
-#                Title $0, Action (Mouse 1) `Exec exec $2`)
-+ I *$0Launch: (1x1+0+3, Font  "-misc-spleen-medium-r-normal--16-160-72-72-c-80-iso10646-1", Fore #F0F0F0, Back #0000A0, \
-                Title $0, Action (Mouse 1) `Exec exec $2`)
-#+ I *$0Launch: (1x1+0+3, Font  "-misc-fixed-medium-r-normal--15-140-75-75-c-90-koi8-r", Fore #F0F0F0, Back #0000A0, \
-#                Title $0, Action (Mouse 1) `Exec exec $2`)
-+ I Style $0Launch HandleWidth 0, NoTitle
-+ I Module FvwmButtons $3 $0Launch
-+ I UpdateStyles
+# Handle clicks in window title bar
+Mouse 1     T       A       Maximize-or-Move
 
-# Examples:
-#Launcher XTerm icons/xterm.png "xterm" "-g +25+25"
-#Launcher Files icons/files.png "xterm -e vifm" "-g +25+125"
-#Launcher INET   icons/internet.png "firefox"   "-g +25+225"
-#Launcher Office icons/office.png "libreoffice"   "-g +25+325"
-#Launcher Calc icons/calc.png "xterm -e bc"   "-g +25+425"
-#Launcher VIM icons/vim.png "xterm -e vim"   "-g +25+525"
-#Launcher Alsa icons/audio.png "xterm -e alsamixer"   "-g +125+25"
-#Launcher HTOP icons/cpu.png "xterm -e htop"   "-g +125+125"
-#Launcher Mail icons/mail.png "firefox https://mail.com"   "-g +125+225"
-#Launcher XClock icons/clock.png "xclock"   "-g +125+325"
-#Launcher TODO icons/printer.png "xterm -e \"cat ~/Documents/todo.txt | less\"" "-g +125+425"
+# == Init (startup) function ==
+# Start pager and system info tools
+AddToFunc "InitFunction" I Module FvwmPager
+AddToFunc "InitFunction" I Exec gkrellm --geometry -9+124 &
+
+# Merge Xdefaults - why is this not done by the system?
+AddToFunc "InitFunction" I Exec xrdb -merge $HOME/.Xdefaults &
+
+# Add bitmap font for xterm
+AddToFunc "InitFunction" I Exec xset +fp /usr/share/fonts/bitmap/knxt
+
+# Set background color
+AddToFunc "InitFunction" I Exec xsetroot -solid SteelBlue &
+
+# Disable touchpad
+AddToFunc "InitFunction" I Exec $HOME/.fvwm/toggle_touchpad &
+
+# == Restart function ==
+# Pager needs to be restarted along with the WM
+AddToFunc "RestartFunction" I Module FvwmPager
+
+# == Window Handling Functions ==
+
+# This will automatically re-tile the icons in the icon box when
+# a window is de-iconified
+# + C = click, + D = double click
+AddToFunc TileIcons
+ + C Iconify off
+ + C All (CurrentPage, Iconic) PlaceAgain Icon
+
+# Move and raise a window
+AddToFunc Move-or-Raise     "M" Raise
++                           "M" Move
++                           "D" Lower
+
+# Resize and raise a window
+AddToFunc Resize-or-Raise   "M" Raise
++                           "M" Resize
++                           "D" Lower
+
+# Maximize window on double-click in title bar.
+# On single click, focus and allow moving it.
+AddToFunc Maximize-or-Move
+ + D Maximize
+ + I Raise
+ + C Focus
+ + M Move
+
+# == Keyboard bindings
+
+# Paging: Windows key + arrows moves to the next desktop
+# in the desired direction
+Key Left        A       4       Scroll -100 0
+Key Right       A       4       Scroll +100  +0
+Key Up          A       4       Scroll +0 -100
+Key Down        A       4       Scroll +0 +100
+
+# Move active window with Windows key + Alt + Arrows
+Key Left    A   14  Move    w-2 w+0
+Key Right   A   14  Move    w+2 w+0
+Key Up      A   14  Move    w+0 w-2
+Key Down    A   14  Move    w+0 w+2
+
+# Toggle touchpad: Windows key + F7
+Key F7      A   4   Exec    $HOME/.fvwm/toggle_touchpad
+
+# Start file manager: Windows key + e
+Key e       A   4   Exec    pcmanfm &
+
+# Show root menu from anywhere: Windows key + Escape
+Key Escape  A   4   Menu    RootMenu
+
+# == Define Menus
+
+# Root Window Menu for window operations
+AddToMenu Window-Ops "Window Ops"      Title
++                    "Move"            Move-or-Raise
++                    "Resize"          Resize-or-Raise
++                    "Raise"           Raise
++                    "Lower"           Lower
++                    "(De)Iconify"     Iconify
++                    "(Un)Stick"       Stick
++                    "(Un)Maximize"    Maximize
++                    ""                Nop
++                    "Delete"          Delete
++                    "Close"           Close
++                    "Destroy"         Destroy
++                    ""                Nop
++                    "Refresh Screen"  Refresh
+
+# Menu for top left hand ("close") button on windows
+AddToMenu Window-Ops2 "Move"       Move
++                     "Resize"     Resize
++                     "(Un)Stick"  Stick
++                     ""           Nop
++                     "Delete"     Delete
++                     "Close"      Close
++                     "Destroy"    Destroy
+
+
+# This is the left-click Root Menu, for launching applications.
+# It will open sub menus defined below.
+AddToMenu RootMenu
++   " Workspace Menu "  Title
++   "Terminal"          Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* &
++   "Big Terminal"      Exec xterm &
++   "TMUX"              Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e tmux -2 & 
++   "TODO"              Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e vim ~/Documents/todo.txt &
++   ""                  Nop
++   "Internet"          Popup SurfMenu
++   "Graphics"          Popup GfxMenu
++   "Audio/Video"       Popup MediaMenu
++   "Applications"      Popup UtilsMenu
++   "System"            Popup SysMenu
+
+# Submenu: System tools
+AddToMenu SysMenu
++   "File Manager"  Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e vifm &
++   "Audio Panel"   Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e aiomixer &
++   "System Temp"   Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e envstat -i 2 &
++   ""              Nop
++   "Restart FVWM"  Restart fvwm2
++   "Sleep Mode"    Popup SuspendMenu #Suspend
++   "Exit X11"      Popup QuitMenu #Quit
+
+# Submenus to System tools menu
+  # - Confirm exiting X11
+  AddToMenu QuitMenu "Exit X11?" Title
+  +   "No Thanks"    Nop
+  +   "Yes, Exit X"  Quit
+
+  # - Confirm suspend
+  AddToMenu SuspendMenu "Sleep Mode?" Title
+  +   "No Thanks"   Nop
+  +   "Yes, Sleep"  Exec systemctl suspend
+
+
+# Internet and Surf menu
+AddToMenu SurfMenu
++   "Firefox"       exec firefox &
++   "Links2"        exec links -g https://duckduckgo.com &
+
+# Various utilities and applications menu
+AddToMenu UtilsMenu
++   "Mupdf"          exec mupdf &
++   "XCalc"          exec xcalc &
++   "XMag"           exec xmag -source 150x150 &
++   "XFontSel"       exec xfontsel &
++   "Libreoffice"    exec libreoffice &
+
+# Graphics programs menu
+AddToMenu GfxMenu
++   "Gimp"     exec gimp &
+
+# Audio/video software menu
+AddToMenu MediaMenu
++   "MPV"           exec mpv &
+
+# == End of config file ==
