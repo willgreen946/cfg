@@ -225,10 +225,10 @@ AddToMenu Window-Ops2 "Move"       Move
 # It will open sub menus defined below.
 AddToMenu RootMenu
 +   " Workspace Menu "  Title
-+   "Terminal"          Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* &
-+   "Big Terminal"      Exec xterm &
-+   "TMUX"              Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e tmux -2 & 
-+   "TODO"              Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e vim ~/Documents/todo.txt &
++   "Terminal"          Exec xterm -geometry 80x24 -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* &
++   "Big Terminal"      Exec xterm -geometry 80x40 -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* &
++   "TMUX"              Exec xterm -geometry 80x40 -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e tmux -2 & 
++   "TODO"              Exec xterm -geometry 80x24 -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e vim ~/Documents/todo.txt &
 +   ""                  Nop
 +   "Internet"          Popup SurfMenu
 +   "Graphics"          Popup GfxMenu
@@ -238,9 +238,9 @@ AddToMenu RootMenu
 
 # Submenu: System tools
 AddToMenu SysMenu
-+   "File Manager"  Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e vifm &
-+   "Audio Panel"   Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e aiomixer &
-+   "System Temp"   Exec xterm -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e envstat -i 2 &
++   "File Manager"  Exec xterm -geometry 80x24 -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e vifm &
++   "Audio Panel"   Exec xterm -geometry 80x24 -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e aiomixer &
++   "System Temp"   Exec xterm -geometry 80x40 -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e envstat -i 2 &
 +   ""              Nop
 +   "Restart FVWM"  Restart fvwm2
 +   "Sleep Mode"    Popup SuspendMenu #Suspend
@@ -265,8 +265,10 @@ AddToMenu SurfMenu
 
 # Various utilities and applications menu
 AddToMenu UtilsMenu
++   "Htop"           exec xterm -geometry 80x40 -fn -*-fixed-medium-*-*-*-18-*-*-*-*-*-*-* -e htop &
 +   "Mupdf"          exec mupdf &
 +   "XCalc"          exec xcalc &
++   "XClock"         exec xclock &
 +   "XMag"           exec xmag -source 150x150 &
 +   "XFontSel"       exec xfontsel &
 +   "Libreoffice"    exec libreoffice &
