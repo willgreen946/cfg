@@ -20,14 +20,15 @@ xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
 xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.6
 
 # Wallpaper
-xsetroot -solid 'rgb:00/22/44'
+#xsetroot -solid 'rgb:00/22/44'
 
 # wallpaper
-feh --bg-scale ~/Pictures/Wallpapers/debian2.png
+#feh --bg-tile ~/Pictures/brown.png
 
 # startup programs
 xterm -e tmux &
 xterm -e "cat ~/Documents/todo.txt | less" &
 
 # window manager
-fvwm
+fvwm2
+#mwm
