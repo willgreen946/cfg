@@ -26,9 +26,9 @@ xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.6
 #feh --bg-tile ~/Pictures/brown.png
 
 # startup programs
-xterm -e tmux &
-xterm -e "cat ~/Documents/todo.txt | less" &
+xterm -geometry 80x40+0+80 -e tmux &
+xterm -geometry 80x24+750+80 -e "cat ~/Documents/todo.txt | less" &
+xclock -digital -geometry +0+0 &
 
 # window manager
-fvwm2
-#mwm
+fvwm
